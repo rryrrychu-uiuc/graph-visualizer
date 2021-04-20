@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/graph-visualizer-test.dir/src/core/Node.cpp.obj"
   "CMakeFiles/graph-visualizer-test.dir/src/core/graph.cpp.obj"
+  "CMakeFiles/graph-visualizer-test.dir/src/core/node.cpp.obj"
   "CMakeFiles/graph-visualizer-test.dir/src/visualizer/graph_visualizer_app.cpp.obj"
   "CMakeFiles/graph-visualizer-test.dir/tests/graph_visualizer_test.cpp.obj"
+  "CMakeFiles/graph-visualizer-test.dir/tests/node_test.cpp.obj"
   "CMakeFiles/graph-visualizer-test.dir/tests/test_main.cc.obj"
   "Debug/graph-visualizer-test/graph-visualizer-test.exe"
   "Debug/graph-visualizer-test/graph-visualizer-test.exe.manifest"

@@ -219,39 +219,6 @@ apps\main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\apps\main.cpp.s
 .PHONY : apps\main.cpp.s
 
-src\core\Node.obj: src\core\Node.cpp.obj
-
-.PHONY : src\core\Node.obj
-
-# target to build an object file
-src\core\Node.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\core\Node.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\src\core\Node.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\core\Node.cpp.obj
-.PHONY : src\core\Node.cpp.obj
-
-src\core\Node.i: src\core\Node.cpp.i
-
-.PHONY : src\core\Node.i
-
-# target to preprocess a source file
-src\core\Node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\core\Node.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\src\core\Node.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\core\Node.cpp.i
-.PHONY : src\core\Node.cpp.i
-
-src\core\Node.s: src\core\Node.cpp.s
-
-.PHONY : src\core\Node.s
-
-# target to generate assembly for a file
-src\core\Node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\core\Node.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\src\core\Node.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\core\Node.cpp.s
-.PHONY : src\core\Node.cpp.s
-
 src\core\graph.obj: src\core\graph.cpp.obj
 
 .PHONY : src\core\graph.obj
@@ -284,6 +251,39 @@ src\core\graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\src\core\graph.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\core\graph.cpp.s
 .PHONY : src\core\graph.cpp.s
+
+src\core\node.obj: src\core\node.cpp.obj
+
+.PHONY : src\core\node.obj
+
+# target to build an object file
+src\core\node.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\core\node.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\src\core\node.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\core\node.cpp.obj
+.PHONY : src\core\node.cpp.obj
+
+src\core\node.i: src\core\node.cpp.i
+
+.PHONY : src\core\node.i
+
+# target to preprocess a source file
+src\core\node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\core\node.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\src\core\node.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\core\node.cpp.i
+.PHONY : src\core\node.cpp.i
+
+src\core\node.s: src\core\node.cpp.s
+
+.PHONY : src\core\node.s
+
+# target to generate assembly for a file
+src\core\node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\core\node.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\src\core\node.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\core\node.cpp.s
+.PHONY : src\core\node.cpp.s
 
 src\visualizer\graph_visualizer_app.obj: src\visualizer\graph_visualizer_app.cpp.obj
 
@@ -342,6 +342,33 @@ tests\graph_visualizer_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\graph_visualizer_test.cpp.s
 .PHONY : tests\graph_visualizer_test.cpp.s
 
+tests\node_test.obj: tests\node_test.cpp.obj
+
+.PHONY : tests\node_test.obj
+
+# target to build an object file
+tests\node_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.obj
+.PHONY : tests\node_test.cpp.obj
+
+tests\node_test.i: tests\node_test.cpp.i
+
+.PHONY : tests\node_test.i
+
+# target to preprocess a source file
+tests\node_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.i
+.PHONY : tests\node_test.cpp.i
+
+tests\node_test.s: tests\node_test.cpp.s
+
+.PHONY : tests\node_test.s
+
+# target to generate assembly for a file
+tests\node_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.s
+.PHONY : tests\node_test.cpp.s
+
 tests\test_main.obj: tests\test_main.cc.obj
 
 .PHONY : tests\test_main.obj
@@ -387,18 +414,21 @@ help:
 	@echo ... apps/main.obj
 	@echo ... apps/main.i
 	@echo ... apps/main.s
-	@echo ... src/core/Node.obj
-	@echo ... src/core/Node.i
-	@echo ... src/core/Node.s
 	@echo ... src/core/graph.obj
 	@echo ... src/core/graph.i
 	@echo ... src/core/graph.s
+	@echo ... src/core/node.obj
+	@echo ... src/core/node.i
+	@echo ... src/core/node.s
 	@echo ... src/visualizer/graph_visualizer_app.obj
 	@echo ... src/visualizer/graph_visualizer_app.i
 	@echo ... src/visualizer/graph_visualizer_app.s
 	@echo ... tests/graph_visualizer_test.obj
 	@echo ... tests/graph_visualizer_test.i
 	@echo ... tests/graph_visualizer_test.s
+	@echo ... tests/node_test.obj
+	@echo ... tests/node_test.i
+	@echo ... tests/node_test.s
 	@echo ... tests/test_main.obj
 	@echo ... tests/test_main.i
 	@echo ... tests/test_main.s

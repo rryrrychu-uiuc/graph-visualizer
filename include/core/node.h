@@ -7,7 +7,6 @@
 
 using ci::vec2;
 
-template <typename ElementType>
 class Node {
 public:
     
@@ -17,22 +16,22 @@ public:
 
     ~Node();
 
-    Node<ElementType>& operator=(const Node<ElementType>& source);
+    Node& operator=(const Node& source);
 
-    Node<ElementType>& operator=(Node<ElementType>&& source) noexcept;
+    Node& operator=(Node&& source) noexcept;
     
-    Node(ElementType data, vec2 location);
+    Node(int data, vec2 location);
     
     vec2 GetLocation();
     
-    ElementType GetValue();
+    int GetValue();
     
     void SetLocation(vec2 location);
     
-    void SetValue(ElementType value);
+    void SetValue(int value);
     
 private:
-    ElementType data_;
+    int data_;
     vec2 location_;
 };
 

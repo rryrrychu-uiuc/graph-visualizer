@@ -224,12 +224,12 @@
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/apps/main.cpp">
 			<Option target="visualize-graph"/>
 		</Unit>
-		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/Node.cpp">
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/graph.cpp">
 			<Option target="graph-visualizer"/>
 			<Option target="visualize-graph"/>
 			<Option target="graph-visualizer-test"/>
 		</Unit>
-		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/graph.cpp">
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/node.cpp">
 			<Option target="graph-visualizer"/>
 			<Option target="visualize-graph"/>
 			<Option target="graph-visualizer-test"/>
@@ -239,6 +239,9 @@
 			<Option target="graph-visualizer-test"/>
 		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/graph_visualizer_test.cpp">
+			<Option target="graph-visualizer-test"/>
+		</Unit>
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/node_test.cpp">
 			<Option target="graph-visualizer-test"/>
 		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/test_main.cc">

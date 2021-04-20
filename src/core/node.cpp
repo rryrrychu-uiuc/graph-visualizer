@@ -1,65 +1,59 @@
 #include "../../include/core/node.h"
 
-template<typename ElementType>
-Node<ElementType>::Node(const Node &source) {
+Node::Node(const Node &source) {
     location_ = source.location_;
     data_ = source.data_;
 }
 
-template<typename ElementType>
-Node<ElementType>::Node(Node &&source) noexcept {
+Node::Node(Node &&source) noexcept {
     location_ = source.location_;
     data_ = source.data_;
     
-    source.data_ = nullptr;
+    source.data_ = 0;
+    source.location_ = vec2(0,0);
 }
 
-template<typename ElementType>
-Node<ElementType>::~Node() {
-    data_ = nullptr;
+Node::~Node() {
+    data_ = 0;
+    location_ = vec2(0,0);
 }
 
-template<typename ElementType>
-Node<ElementType> &Node<ElementType>::operator=(const Node<ElementType> &source) {
+Node &Node::operator=(const Node &source) {
     Node new_node(source);
-    std::swap(location_, source.location_);
-    std::swap(data_, source.data_);
+    location_ = source.location_;
+    data_ = source.data_;
+    
+    return *this;
 }
 
-template<typename ElementType>
-Node<ElementType> &Node<ElementType>::operator=(Node<ElementType> &&source) noexcept {
+Node &Node::operator=(Node &&source) noexcept {
     if(this == &source) {
         return *this;
     }
 
-    location_ = source.location;
+    location_ = source.location_;
     data_ = source.data_;
     return *this;
 }
 
-template<typename ElementType>
-Node<ElementType>::Node(ElementType data, vec2 location) {
+Node::Node(int data, vec2 location) {
     location_ = location;
     data_ = data;
 }
 
-template<typename ElementType>
-vec2 Node<ElementType>::GetLocation() {
-    return glm::vec2();
+vec2 Node::GetLocation() {
+    return location_;
 }
 
-template<typename ElementType>
-ElementType Node<ElementType>::GetValue() {
-    return nullptr;
+int Node::GetValue() {
+    return data_;
 }
 
-template<typename ElementType>
-void Node<ElementType>::SetLocation(vec2 location) {
-
+void Node::SetLocation(vec2 location) {
+    location_ = location;
 }
 
-template<typename ElementType>
-void Node<ElementType>::SetValue(ElementType value) {
-
+void Node::SetValue(int value) {
+    data_ = value;
 }
 

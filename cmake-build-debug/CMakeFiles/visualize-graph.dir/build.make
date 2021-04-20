@@ -98,37 +98,37 @@ CMakeFiles\visualize-graph.dir\src\core\graph.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\visualize-graph.dir\src\core\graph.cpp.s /c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\core\graph.cpp
 <<
 
-CMakeFiles\visualize-graph.dir\src\core\Node.cpp.obj: CMakeFiles\visualize-graph.dir\flags.make
-CMakeFiles\visualize-graph.dir\src\core\Node.cpp.obj: ..\src\core\Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/visualize-graph.dir/src/core/Node.cpp.obj"
+CMakeFiles\visualize-graph.dir\src\core\node.cpp.obj: CMakeFiles\visualize-graph.dir\flags.make
+CMakeFiles\visualize-graph.dir\src\core\node.cpp.obj: ..\src\core\node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/visualize-graph.dir/src/core/node.cpp.obj"
 	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\visualize-graph.dir\src\core\Node.cpp.obj /FdCMakeFiles\visualize-graph.dir\ /FS -c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\core\Node.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\visualize-graph.dir\src\core\node.cpp.obj /FdCMakeFiles\visualize-graph.dir\ /FS -c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\core\node.cpp
 <<
 
-CMakeFiles\visualize-graph.dir\src\core\Node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/visualize-graph.dir/src/core/Node.cpp.i"
-	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe > CMakeFiles\visualize-graph.dir\src\core\Node.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\core\Node.cpp
+CMakeFiles\visualize-graph.dir\src\core\node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/visualize-graph.dir/src/core/node.cpp.i"
+	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe > CMakeFiles\visualize-graph.dir\src\core\node.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\core\node.cpp
 <<
 
-CMakeFiles\visualize-graph.dir\src\core\Node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/visualize-graph.dir/src/core/Node.cpp.s"
+CMakeFiles\visualize-graph.dir\src\core\node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/visualize-graph.dir/src/core/node.cpp.s"
 	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\visualize-graph.dir\src\core\Node.cpp.s /c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\core\Node.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\visualize-graph.dir\src\core\node.cpp.s /c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\core\node.cpp
 <<
 
 # Object files for target visualize-graph
 visualize__graph_OBJECTS = \
 "CMakeFiles\visualize-graph.dir\apps\main.cpp.obj" \
 "CMakeFiles\visualize-graph.dir\src\core\graph.cpp.obj" \
-"CMakeFiles\visualize-graph.dir\src\core\Node.cpp.obj"
+"CMakeFiles\visualize-graph.dir\src\core\node.cpp.obj"
 
 # External object files for target visualize-graph
 visualize__graph_EXTERNAL_OBJECTS =
 
 visualize-graph.exe: CMakeFiles\visualize-graph.dir\apps\main.cpp.obj
 visualize-graph.exe: CMakeFiles\visualize-graph.dir\src\core\graph.cpp.obj
-visualize-graph.exe: CMakeFiles\visualize-graph.dir\src\core\Node.cpp.obj
+visualize-graph.exe: CMakeFiles\visualize-graph.dir\src\core\node.cpp.obj
 visualize-graph.exe: CMakeFiles\visualize-graph.dir\build.make
 visualize-graph.exe: CMakeFiles\visualize-graph.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable visualize-graph.exe"
