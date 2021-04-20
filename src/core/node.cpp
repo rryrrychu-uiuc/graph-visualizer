@@ -57,3 +57,20 @@ void Node::SetValue(int value) {
     data_ = value;
 }
 
+void Node::AddAdjacentNode(Node* adj_node) {
+    adjacent_nodes_.push_back(adj_node);
+}
+
+vector<Node*> Node::GetAdjacentNodes() {
+    return adjacent_nodes_;
+}
+
+bool Node::IsAdjacentTo(Node* target_node) {
+    for(size_t index = 0; index < adjacent_nodes_.size(); index++) {
+        if (adjacent_nodes_[index] == target_node) {
+            return true;
+        }
+    }
+    return false;
+}
+

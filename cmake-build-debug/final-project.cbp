@@ -238,6 +238,9 @@
 			<Option target="graph-visualizer"/>
 			<Option target="graph-visualizer-test"/>
 		</Unit>
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/graph_test.cpp">
+			<Option target="graph-visualizer-test"/>
+		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/graph_visualizer_test.cpp">
 			<Option target="graph-visualizer-test"/>
 		</Unit>

@@ -3,8 +3,20 @@
 #define FINAL_PROJECT_GRAPH_H
 
 
-class Graph {
+#include "node.h"
+#include <vector>
+using std::vector;
 
+class Graph {
+public:
+    vector<Node> GetNodes();
+    
+    void AddNode(Node target_node);
+    
+    void AddEdge(Node* start_node, Node* end_node, bool single_direction);
+    
+private:
+    vector<Node> nodes;
 };
 
 
