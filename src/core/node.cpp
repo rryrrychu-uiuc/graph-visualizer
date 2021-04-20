@@ -1,5 +1,15 @@
 #include "../../include/core/node.h"
 
+Node::Node(int data) {
+    data_ = data;
+    location_ = vec2(-1,-1);
+}
+
+Node::Node(int data, vec2 location) {
+    location_ = location;
+    data_ = data;
+}
+
 Node::Node(const Node &source) {
     location_ = source.location_;
     data_ = source.data_;
@@ -34,11 +44,6 @@ Node &Node::operator=(Node &&source) noexcept {
     location_ = source.location_;
     data_ = source.data_;
     return *this;
-}
-
-Node::Node(int data, vec2 location) {
-    location_ = location;
-    data_ = data;
 }
 
 vec2 Node::GetLocation() {

@@ -1,7 +1,13 @@
 #include <catch2/catch.hpp>
 #include <core/node.h>
 
-TEST_CASE("Constructor Test"){
+TEST_CASE("One Param Constructor Test"){
+    Node test_node(10);
+    REQUIRE(test_node.GetValue() == 10);
+    REQUIRE(test_node.GetLocation() == vec2(-1, -1));
+}
+
+TEST_CASE("Two Param Constructor Test"){
     Node test_node(10, vec2(10,10));
     REQUIRE(test_node.GetValue() == 10);
     REQUIRE(test_node.GetLocation() == vec2(10, 10));

@@ -10,9 +10,22 @@ using std::vector;
 
 class Node {
 public:
+    /**
+     * Constructor that only takes the value stored in the node
+     * @param data value to be stored in the node
+     */
+    Node(int data);
+    
+    /**
+     * Constructor that takes the location and data of a node
+     * @param data value stored in node
+     * @param location on the graph
+     */
+    Node(int data, vec2 location);
     
     Node(const Node& source);
 
+    //
     Node(Node&& source) noexcept;
 
     ~Node();
@@ -20,8 +33,7 @@ public:
     Node& operator=(const Node& source);
 
     Node& operator=(Node&& source) noexcept;
-    
-    Node(int data, vec2 location);
+
     
     vec2 GetLocation();
     
