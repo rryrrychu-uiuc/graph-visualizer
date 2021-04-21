@@ -2,7 +2,7 @@
 
 using graph::visualizer::GraphVisualizerApp;
 
-void prepareSettings(NaiveBayesApp::Settings* settings) {
+void prepareSettings(GraphVisualizerApp::Settings* settings) {
     settings->setResizable(false);
 }
 

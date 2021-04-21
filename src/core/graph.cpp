@@ -1,8 +1,6 @@
-//
-// Created by rryrr on 4/19/2021.
-//
-
 #include "../../include/core/graph.h"
+
+namespace graph {
 
 vector<Node> Graph::GetNodes() {
     return nodes;
@@ -21,4 +19,7 @@ void Graph::AddEdge(Node* start_node, Node* end_node, bool single_direction) {
     }
 }
 
-
+void Graph::ClearGraph() {
+    nodes.clear();
+}
+}

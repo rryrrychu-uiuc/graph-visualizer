@@ -15,9 +15,24 @@ TEST_CASE("Two Param Constructor Test"){
 
 TEST_CASE("Copy Constructor Test"){
     Node test_node1(10, vec2(10,10));
-    Node test_node2(test_node1);
-    REQUIRE(test_node2.GetValue() == 10);
-    REQUIRE(test_node2.GetLocation() == vec2(10, 10));
+    Node test_node2(20, vec2(12,12));
+    Node test_node3(30, vec2(13, 14));
+    Node test_node4(30, vec2(233, 14));
+    Node test_node5(35, vec2(233, 14));
+
+    test_node1.AddAdjacentNode(&test_node3);
+    test_node1.AddAdjacentNode(&test_node4);
+    test_node1.AddAdjacentNode(&test_node5);
+    Node test_node6(test_node1);
+    
+    REQUIRE(test_node6.GetValue() == 10);
+    REQUIRE(test_node6.GetLocation() == vec2(10, 10));
+    
+    vector<Node*> adj1 = test_node1.GetAdjacentNodes();
+    vector<Node*> adj6 = test_node6.GetAdjacentNodes();
+    for(size_t index = 0; index < test_node6.GetAdjacentNodes().size(); index++) {
+        REQUIRE(adj1[index] == adj6[index]);
+    }
     
     test_node1.SetValue(20);
     test_node1.SetLocation(vec2(12,12));

@@ -13,23 +13,39 @@ Node::Node(int data, vec2 location) {
 Node::Node(const Node &source) {
     location_ = source.location_;
     data_ = source.data_;
+    
+    for(size_t index = 0; index < source.adjacent_nodes_.size(); index++) {
+        adjacent_nodes_.push_back(source.adjacent_nodes_[index]);
+    }
 }
 
 Node::Node(Node &&source) noexcept {
     location_ = source.location_;
     data_ = source.data_;
+    for(size_t index = 0; index < source.adjacent_nodes_.size(); index++) {
+        adjacent_nodes_.push_back(source.adjacent_nodes_[index]);
+    }
     
     source.data_ = 0;
-    source.location_ = vec2(0,0);
+    source.location_ = vec2(-1,-1);
+    source.adjacent_nodes_.clear();
 }
 
 Node::~Node() {
     data_ = 0;
-    location_ = vec2(0,0);
+    location_ = vec2(-1,-1);
+    adjacent_nodes_.clear();
 }
 
 Node &Node::operator=(const Node &source) {
-    Node new_node(source);
+    if(this == &source) {
+        return *this;
+    }
+
+    for(size_t index = 0; index < source.adjacent_nodes_.size(); index++) {
+        adjacent_nodes_.push_back(source.adjacent_nodes_[index]);
+    }
+    
     location_ = source.location_;
     data_ = source.data_;
     
@@ -41,8 +57,17 @@ Node &Node::operator=(Node &&source) noexcept {
         return *this;
     }
 
+    adjacent_nodes_.clear();
+    for(size_t index = 0; index < source.adjacent_nodes_.size(); index++) {
+        adjacent_nodes_.push_back(source.adjacent_nodes_[index]);
+    }
+    
     location_ = source.location_;
     data_ = source.data_;
+
+    source.data_ = 0;
+    source.location_ = vec2(-1,-1);
+    source.adjacent_nodes_.clear();
     return *this;
 }
 
