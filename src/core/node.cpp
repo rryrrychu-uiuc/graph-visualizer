@@ -8,6 +8,7 @@ Node::Node(int data) {
 Node::Node(int data, vec2 location) {
     location_ = location;
     data_ = data;
+    adjacent_nodes_.reserve(100);
 }
 
 Node::Node(const Node &source) {
@@ -104,3 +105,6 @@ bool Node::IsAdjacentTo(Node* target_node) {
     return false;
 }
 
+bool Node::operator==( const Node& rhs) const {
+    return data_ == rhs.data_ && location_ == rhs.location_;
+}

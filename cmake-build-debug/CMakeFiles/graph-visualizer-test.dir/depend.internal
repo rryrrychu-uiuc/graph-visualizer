@@ -1705,6 +1705,8 @@ CMakeFiles/graph-visualizer-test.dir/src/core/node.cpp.obj
  C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/node.h
  C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/node.cpp
 CMakeFiles/graph-visualizer-test.dir/src/visualizer/graph_visualizer_app.cpp.obj
+ ../include/core/graph.h
+ ../include/core/node.h
  C:/Users/rryrr/CLionProjects/Cinder/include/boost/assert.hpp
  C:/Users/rryrr/CLionProjects/Cinder/include/boost/cerrno.hpp
  C:/Users/rryrr/CLionProjects/Cinder/include/boost/checked_delete.hpp

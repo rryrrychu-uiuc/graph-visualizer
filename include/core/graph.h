@@ -10,6 +10,9 @@ using std::vector;
 namespace graph {
 class Graph {
 public:
+    
+    Graph();
+    
     /**
      * Returns list of nodes from the graph
      */
@@ -26,7 +29,9 @@ public:
      * @param end_node node to be added
      * @param single_direction false if both nodes should be added to each other's adjacency list
      */
-    void AddEdge(Node* start_node, Node* end_node, bool single_direction);
+    void AddEdge(int start_node, int end_node, bool single_direction);
+    
+    void SetLocation(size_t index, vec2 location);
     
     /**
      * Delete every node from the graph

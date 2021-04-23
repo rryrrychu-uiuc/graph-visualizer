@@ -1704,6 +1704,8 @@ CMakeFiles\graph-visualizer-test.dir\src\core\node.cpp.obj: C:\Users\rryrr\CLion
 CMakeFiles\graph-visualizer-test.dir\src\core\node.cpp.obj: ..\include\core\node.h
 CMakeFiles\graph-visualizer-test.dir\src\core\node.cpp.obj: ..\src\core\node.cpp
 
+CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_visualizer_app.cpp.obj: ..\include\core\graph.h
+CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_visualizer_app.cpp.obj: ..\include\core\node.h
 CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_visualizer_app.cpp.obj: C:\Users\rryrr\CLionProjects\Cinder\include\boost\assert.hpp
 CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_visualizer_app.cpp.obj: C:\Users\rryrr\CLionProjects\Cinder\include\boost\cerrno.hpp
 CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_visualizer_app.cpp.obj: C:\Users\rryrr\CLionProjects\Cinder\include\boost\checked_delete.hpp

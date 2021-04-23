@@ -7816,16 +7816,6 @@ C:/Users/rryrr/CLionProjects/Cinder/include/glm/detail/setup.hpp
 detail/func_vector_relational.inl
 C:/Users/rryrr/CLionProjects/Cinder/include/glm/detail/func_vector_relational.inl
 
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/node.h
-glm/vec2.hpp
--
-cinder/gl/gl.h
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/cinder/gl/gl.h
-
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/node.cpp
-../../include/core/node.h
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/node.h
-
 C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/node_test.cpp
 catch2/catch.hpp
 -

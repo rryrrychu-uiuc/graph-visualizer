@@ -34,10 +34,13 @@ TEST_CASE("Copy Constructor Test"){
         REQUIRE(adj1[index] == adj6[index]);
     }
     
-    test_node1.SetValue(20);
-    test_node1.SetLocation(vec2(12,12));
-    REQUIRE(test_node2.GetValue() == 10);
-    REQUIRE(test_node2.GetLocation() == vec2(10, 10));
+    SECTION("Test No change between values") {
+        test_node1.SetValue(45);
+        test_node1.SetLocation(vec2(15,15));
+        REQUIRE(test_node2.GetValue() == 20);
+        REQUIRE(test_node2.GetLocation() == vec2(12, 12));
+    }
+
 }
 
 TEST_CASE("Copy Operator Test") {
@@ -100,7 +103,7 @@ TEST_CASE("AddAdjNode Test") {
     
     for(size_t index = 0; index < values.size(); index++) {
         values[index]->SetValue(14);
-        REQUIRE(test_node2.GetValue() == 14);
+        REQUIRE(test_node2.GetValue() == 20);
     }
 }
 

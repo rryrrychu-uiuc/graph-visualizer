@@ -15,12 +15,10 @@ class GraphVisualizerApp : public ci::app::App {
 public:
     
     GraphVisualizerApp();
-    
-    GraphVisualizerApp(Graph to_visualize);
-    
-    void UpdateGraph(Graph to_visualize);
 
     void draw() override;
+    void mouseDown(ci::app::MouseEvent event) override;
+    void mouseDrag(ci::app::MouseEvent event) override;
 
     // provided that you can see the entire UI on your screen.
     const double kWindowSize = 1000;
@@ -30,8 +28,16 @@ public:
     const ci::Color kDefaultColor;
     const ci::Color kFontColor;
     const ci::Font kDefaultFont;
+private:
+    Graph visualized_graph;
     
-    vector<Node> visualized_nodes_;
+    void DrawNodes();
+    
+    void DrawEdges();
+    
+    void InitializeGraph();
+    
+    bool LocationOutOfBounds(vec2 loc);
 };
 }
 }

@@ -47,6 +47,8 @@ public:
      * Move operator
      */
     Node& operator=(Node&& source) noexcept;
+
+    bool Node::operator==( const Node& rhs) const;
     
     vec2 GetLocation();
     
