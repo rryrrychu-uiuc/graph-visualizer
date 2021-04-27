@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graph-visualizer-test.dir/src/core/edge.cpp.obj"
   "CMakeFiles/graph-visualizer-test.dir/src/core/graph.cpp.obj"
   "CMakeFiles/graph-visualizer-test.dir/src/core/node.cpp.obj"
+  "CMakeFiles/graph-visualizer-test.dir/src/visualizer/graph_editor.cpp.obj"
   "CMakeFiles/graph-visualizer-test.dir/src/visualizer/graph_manipulator_app.cpp.obj"
   "CMakeFiles/graph-visualizer-test.dir/src/visualizer/graph_view.cpp.obj"
   "CMakeFiles/graph-visualizer-test.dir/tests/edge_test.cpp.obj"

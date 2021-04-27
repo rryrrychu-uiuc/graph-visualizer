@@ -242,6 +242,10 @@
 			<Option target="visualize-graph"/>
 			<Option target="graph-visualizer-test"/>
 		</Unit>
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/graph_editor.cpp">
+			<Option target="graph-visualizer"/>
+			<Option target="graph-visualizer-test"/>
+		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/graph_manipulator_app.cpp">
 			<Option target="graph-visualizer"/>
 			<Option target="graph-visualizer-test"/>

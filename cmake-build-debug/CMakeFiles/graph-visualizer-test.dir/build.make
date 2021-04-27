@@ -174,9 +174,28 @@ CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_view.cpp.s: cmake_forc
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_view.cpp.s /c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_view.cpp
 <<
 
+CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.obj: CMakeFiles\graph-visualizer-test.dir\flags.make
+CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.obj: ..\src\visualizer\graph_editor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graph-visualizer-test.dir/src/visualizer/graph_editor.cpp.obj"
+	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.obj /FdCMakeFiles\graph-visualizer-test.dir\ /FS -c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_editor.cpp
+<<
+
+CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph-visualizer-test.dir/src/visualizer/graph_editor.cpp.i"
+	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe > CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_editor.cpp
+<<
+
+CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph-visualizer-test.dir/src/visualizer/graph_editor.cpp.s"
+	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.s /c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_editor.cpp
+<<
+
 CMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.obj: CMakeFiles\graph-visualizer-test.dir\flags.make
 CMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.obj: ..\tests\node_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graph-visualizer-test.dir/tests/node_test.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graph-visualizer-test.dir/tests/node_test.cpp.obj"
 	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.obj /FdCMakeFiles\graph-visualizer-test.dir\ /FS -c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\tests\node_test.cpp
 <<
@@ -195,7 +214,7 @@ CMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.s: cmake_force
 
 CMakeFiles\graph-visualizer-test.dir\tests\graph_test.cpp.obj: CMakeFiles\graph-visualizer-test.dir\flags.make
 CMakeFiles\graph-visualizer-test.dir\tests\graph_test.cpp.obj: ..\tests\graph_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graph-visualizer-test.dir/tests/graph_test.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graph-visualizer-test.dir/tests/graph_test.cpp.obj"
 	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\graph-visualizer-test.dir\tests\graph_test.cpp.obj /FdCMakeFiles\graph-visualizer-test.dir\ /FS -c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\tests\graph_test.cpp
 <<
@@ -214,7 +233,7 @@ CMakeFiles\graph-visualizer-test.dir\tests\graph_test.cpp.s: cmake_force
 
 CMakeFiles\graph-visualizer-test.dir\tests\edge_test.cpp.obj: CMakeFiles\graph-visualizer-test.dir\flags.make
 CMakeFiles\graph-visualizer-test.dir\tests\edge_test.cpp.obj: ..\tests\edge_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graph-visualizer-test.dir/tests/edge_test.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graph-visualizer-test.dir/tests/edge_test.cpp.obj"
 	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\graph-visualizer-test.dir\tests\edge_test.cpp.obj /FdCMakeFiles\graph-visualizer-test.dir\ /FS -c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\tests\edge_test.cpp
 <<
@@ -239,6 +258,7 @@ graph__visualizer__test_OBJECTS = \
 "CMakeFiles\graph-visualizer-test.dir\src\core\edge.cpp.obj" \
 "CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.obj" \
 "CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_view.cpp.obj" \
+"CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.obj" \
 "CMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.obj" \
 "CMakeFiles\graph-visualizer-test.dir\tests\graph_test.cpp.obj" \
 "CMakeFiles\graph-visualizer-test.dir\tests\edge_test.cpp.obj"
@@ -252,13 +272,14 @@ Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualiz
 Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualizer-test.dir\src\core\edge.cpp.obj
 Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.obj
 Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_view.cpp.obj
+Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.obj
 Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.obj
 Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualizer-test.dir\tests\graph_test.cpp.obj
 Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualizer-test.dir\tests\edge_test.cpp.obj
 Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualizer-test.dir\build.make
 Debug\graph-visualizer-test\graph-visualizer-test.exe: C:\Users\rryrr\CLionProjects\Cinder\lib\msw\x86\Debug\v140\cinder.lib
 Debug\graph-visualizer-test\graph-visualizer-test.exe: CMakeFiles\graph-visualizer-test.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Debug\graph-visualizer-test\graph-visualizer-test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Debug\graph-visualizer-test\graph-visualizer-test.exe"
 	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\graph-visualizer-test.dir --rc=C:\PROGRA~2\WI3CF2~1\8.1\bin\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\8.1\bin\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1.0\VC\bin\link.exe /nologo @CMakeFiles\graph-visualizer-test.dir\objects1.rsp @<<
  /out:Debug\graph-visualizer-test\graph-visualizer-test.exe /implib:graph-visualizer-test.lib /pdb:C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Debug\graph-visualizer-test\graph-visualizer-test.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:windows  /SUBSYSTEM:CONSOLE /NODEFAULTLIB:LIBCMT /NODEFAULTLIB:LIBCPMT   -LIBPATH:C:\Users\rryrr\CLionProjects\Cinder\lib\msw\x86  C:\Users\rryrr\CLionProjects\Cinder\lib\msw\x86\Debug\v140\cinder.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

@@ -318,6 +318,36 @@ src\core\node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\core\node.cpp.s
 .PHONY : src\core\node.cpp.s
 
+src\visualizer\graph_editor.obj: src\visualizer\graph_editor.cpp.obj
+
+.PHONY : src\visualizer\graph_editor.obj
+
+# target to build an object file
+src\visualizer\graph_editor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_editor.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.obj
+.PHONY : src\visualizer\graph_editor.cpp.obj
+
+src\visualizer\graph_editor.i: src\visualizer\graph_editor.cpp.i
+
+.PHONY : src\visualizer\graph_editor.i
+
+# target to preprocess a source file
+src\visualizer\graph_editor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_editor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.i
+.PHONY : src\visualizer\graph_editor.cpp.i
+
+src\visualizer\graph_editor.s: src\visualizer\graph_editor.cpp.s
+
+.PHONY : src\visualizer\graph_editor.s
+
+# target to generate assembly for a file
+src\visualizer\graph_editor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_editor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_editor.cpp.s
+.PHONY : src\visualizer\graph_editor.cpp.s
+
 src\visualizer\graph_manipulator_app.obj: src\visualizer\graph_manipulator_app.cpp.obj
 
 .PHONY : src\visualizer\graph_manipulator_app.obj
@@ -513,6 +543,9 @@ help:
 	@echo ... src/core/node.obj
 	@echo ... src/core/node.i
 	@echo ... src/core/node.s
+	@echo ... src/visualizer/graph_editor.obj
+	@echo ... src/visualizer/graph_editor.i
+	@echo ... src/visualizer/graph_editor.s
 	@echo ... src/visualizer/graph_manipulator_app.obj
 	@echo ... src/visualizer/graph_manipulator_app.i
 	@echo ... src/visualizer/graph_manipulator_app.s
