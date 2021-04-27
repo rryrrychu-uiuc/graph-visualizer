@@ -136,23 +136,23 @@ CMakeFiles\graph-visualizer.dir\src\core\edge.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graph-visualizer.dir\src\core\edge.cpp.s /c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\core\edge.cpp
 <<
 
-CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.obj: CMakeFiles\graph-visualizer.dir\flags.make
-CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.obj: ..\src\visualizer\graph_visualizer_app.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graph-visualizer.dir/src/visualizer/graph_visualizer_app.cpp.obj"
+CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.obj: CMakeFiles\graph-visualizer.dir\flags.make
+CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.obj: ..\src\visualizer\graph_manipulator_app.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graph-visualizer.dir/src/visualizer/graph_manipulator_app.cpp.obj"
 	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.obj /FdCMakeFiles\graph-visualizer.dir\ /FS -c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_visualizer_app.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.obj /FdCMakeFiles\graph-visualizer.dir\ /FS -c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_manipulator_app.cpp
 <<
 
-CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph-visualizer.dir/src/visualizer/graph_visualizer_app.cpp.i"
-	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe > CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_visualizer_app.cpp
+CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph-visualizer.dir/src/visualizer/graph_manipulator_app.cpp.i"
+	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe > CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_manipulator_app.cpp
 <<
 
-CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph-visualizer.dir/src/visualizer/graph_visualizer_app.cpp.s"
+CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph-visualizer.dir/src/visualizer/graph_manipulator_app.cpp.s"
 	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.s /c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_visualizer_app.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.s /c C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\src\visualizer\graph_manipulator_app.cpp
 <<
 
 CMakeFiles\graph-visualizer.dir\src\visualizer\graph_view.cpp.obj: CMakeFiles\graph-visualizer.dir\flags.make
@@ -180,7 +180,7 @@ graph__visualizer_OBJECTS = \
 "CMakeFiles\graph-visualizer.dir\src\core\graph.cpp.obj" \
 "CMakeFiles\graph-visualizer.dir\src\core\node.cpp.obj" \
 "CMakeFiles\graph-visualizer.dir\src\core\edge.cpp.obj" \
-"CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.obj" \
+"CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.obj" \
 "CMakeFiles\graph-visualizer.dir\src\visualizer\graph_view.cpp.obj"
 
 # External object files for target graph-visualizer
@@ -190,7 +190,7 @@ Debug\graph-visualizer\graph-visualizer.exe: CMakeFiles\graph-visualizer.dir\app
 Debug\graph-visualizer\graph-visualizer.exe: CMakeFiles\graph-visualizer.dir\src\core\graph.cpp.obj
 Debug\graph-visualizer\graph-visualizer.exe: CMakeFiles\graph-visualizer.dir\src\core\node.cpp.obj
 Debug\graph-visualizer\graph-visualizer.exe: CMakeFiles\graph-visualizer.dir\src\core\edge.cpp.obj
-Debug\graph-visualizer\graph-visualizer.exe: CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.obj
+Debug\graph-visualizer\graph-visualizer.exe: CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.obj
 Debug\graph-visualizer\graph-visualizer.exe: CMakeFiles\graph-visualizer.dir\src\visualizer\graph_view.cpp.obj
 Debug\graph-visualizer\graph-visualizer.exe: CMakeFiles\graph-visualizer.dir\build.make
 Debug\graph-visualizer\graph-visualizer.exe: C:\Users\rryrr\CLionProjects\Cinder\lib\msw\x86\Debug\v140\cinder.lib

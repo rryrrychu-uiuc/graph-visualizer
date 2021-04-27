@@ -318,6 +318,36 @@ src\core\node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\core\node.cpp.s
 .PHONY : src\core\node.cpp.s
 
+src\visualizer\graph_manipulator_app.obj: src\visualizer\graph_manipulator_app.cpp.obj
+
+.PHONY : src\visualizer\graph_manipulator_app.obj
+
+# target to build an object file
+src\visualizer\graph_manipulator_app.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.obj
+.PHONY : src\visualizer\graph_manipulator_app.cpp.obj
+
+src\visualizer\graph_manipulator_app.i: src\visualizer\graph_manipulator_app.cpp.i
+
+.PHONY : src\visualizer\graph_manipulator_app.i
+
+# target to preprocess a source file
+src\visualizer\graph_manipulator_app.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.i
+.PHONY : src\visualizer\graph_manipulator_app.cpp.i
+
+src\visualizer\graph_manipulator_app.s: src\visualizer\graph_manipulator_app.cpp.s
+
+.PHONY : src\visualizer\graph_manipulator_app.s
+
+# target to generate assembly for a file
+src\visualizer\graph_manipulator_app.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_manipulator_app.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.s
+.PHONY : src\visualizer\graph_manipulator_app.cpp.s
+
 src\visualizer\graph_view.obj: src\visualizer\graph_view.cpp.obj
 
 .PHONY : src\visualizer\graph_view.obj
@@ -347,36 +377,6 @@ src\visualizer\graph_view.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_view.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_view.cpp.s
 .PHONY : src\visualizer\graph_view.cpp.s
-
-src\visualizer\graph_visualizer_app.obj: src\visualizer\graph_visualizer_app.cpp.obj
-
-.PHONY : src\visualizer\graph_visualizer_app.obj
-
-# target to build an object file
-src\visualizer\graph_visualizer_app.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_visualizer_app.cpp.obj
-.PHONY : src\visualizer\graph_visualizer_app.cpp.obj
-
-src\visualizer\graph_visualizer_app.i: src\visualizer\graph_visualizer_app.cpp.i
-
-.PHONY : src\visualizer\graph_visualizer_app.i
-
-# target to preprocess a source file
-src\visualizer\graph_visualizer_app.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_visualizer_app.cpp.i
-.PHONY : src\visualizer\graph_visualizer_app.cpp.i
-
-src\visualizer\graph_visualizer_app.s: src\visualizer\graph_visualizer_app.cpp.s
-
-.PHONY : src\visualizer\graph_visualizer_app.s
-
-# target to generate assembly for a file
-src\visualizer\graph_visualizer_app.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\graph_visualizer_app.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_visualizer_app.cpp.s
-.PHONY : src\visualizer\graph_visualizer_app.cpp.s
 
 tests\edge_test.obj: tests\edge_test.cpp.obj
 
@@ -513,12 +513,12 @@ help:
 	@echo ... src/core/node.obj
 	@echo ... src/core/node.i
 	@echo ... src/core/node.s
+	@echo ... src/visualizer/graph_manipulator_app.obj
+	@echo ... src/visualizer/graph_manipulator_app.i
+	@echo ... src/visualizer/graph_manipulator_app.s
 	@echo ... src/visualizer/graph_view.obj
 	@echo ... src/visualizer/graph_view.i
 	@echo ... src/visualizer/graph_view.s
-	@echo ... src/visualizer/graph_visualizer_app.obj
-	@echo ... src/visualizer/graph_visualizer_app.i
-	@echo ... src/visualizer/graph_visualizer_app.s
 	@echo ... tests/edge_test.obj
 	@echo ... tests/edge_test.i
 	@echo ... tests/edge_test.s

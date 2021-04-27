@@ -24,14 +24,5 @@ Call Stack (most recent call first):
 
 
 -- Configuring done
-CMake Error at CMakeLists.txt:44 (add_library):
-  Cannot find source file:
-
-    src/core/node_hash.cpp
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
-  .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .ispc
-
-
 -- Generating done
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Build files have been written to: C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug

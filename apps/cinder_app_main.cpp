@@ -1,4 +1,4 @@
-#include <visualizer/graph_visualizer_app.h>
+#include <visualizer/graph_manipulator_app.h>
 
 using graph::visualizer::GraphVisualizerApp;
 
