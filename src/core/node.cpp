@@ -72,11 +72,11 @@ Node &Node::operator=(Node &&source) noexcept {
     return *this;
 }
 
-vec2 Node::GetLocation() {
+vec2 Node::GetLocation() const {
     return location_;
 }
 
-int Node::GetValue() {
+int Node::GetValue() const {
     return data_;
 }
 
@@ -107,4 +107,8 @@ bool Node::IsAdjacentTo(Node* target_node) {
 
 bool Node::operator==( const Node& rhs) const {
     return data_ == rhs.data_ && location_ == rhs.location_;
+}
+
+bool Node::operator<(const Node &ob) const {
+    return data_ < ob.data_ || (data_ == ob.data_ && location_.x < ob.location_.x) || (data_ == ob.data_ && location_.x == ob.location_.x && location_.y < location_.y);
 }
