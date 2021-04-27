@@ -41,7 +41,7 @@ FetchContent_Declare(
 FetchContent_GetProperties(catch2)
 if(NOT catch2_POPULATED)
     FetchContent_Populate(catch2)
-    add_library(catch2 INTERFACE src/visualizer/graph_visualizer_app.cpp include/visualizer/graph_visualizer_app.h tests/graph_visualizer_test.cpp src/core/graph.cpp include/core/graph.h apps/cinder_app_main.cpp src/core/node.cpp include/core/node.h tests/node_test.cpp tests/graph_test.cpp)
+    add_library(catch2 INTERFACE src/visualizer/graph_visualizer_app.cpp include/visualizer/graph_visualizer_app.h src/core/graph.cpp include/core/graph.h apps/cinder_app_main.cpp src/core/node.cpp include/core/node.h tests/node_test.cpp tests/graph_test.cpp src/visualizer/graph_view.cpp include/visualizer/graph_view.h tests/edge_test.cpp src/core/node_hash.cpp include/core/node_hash.h)
     target_include_directories(catch2 INTERFACE ${catch2_SOURCE_DIR}/single_include)
 endif()
 
@@ -51,16 +51,18 @@ get_filename_component(APP_PATH "${CMAKE_CURRENT_SOURCE_DIR}/" ABSOLUTE)
 include("${CINDER_PATH}/proj/cmake/modules/cinderMakeApp.cmake")
 
 list(APPEND CORE_SOURCE_FILES   src/core/graph.cpp
-        src/core/node.cpp)
+                                src/core/node.cpp
+                                src/core/edge.cpp)
 
 list(APPEND SOURCE_FILES    ${CORE_SOURCE_FILES}
-                            src/visualizer/graph_visualizer_app.cpp)
+                            src/visualizer/graph_visualizer_app.cpp
+                            src/visualizer/graph_view.cpp)
 
-list(APPEND TEST_FILES  tests/graph_visualizer_test.cpp
-                        tests/node_test.cpp
-                        tests/graph_test.cpp)
+list(APPEND TEST_FILES  tests/node_test.cpp
+                        tests/graph_test.cpp
+                        tests/edge_test.cpp)
 
-add_executable(visualize-graph apps/main.cpp ${CORE_SOURCE_FILES})
+add_executable(visualize-graph apps/main.cpp ${CORE_SOURCE_FILES} src/core/edge.cpp include/core/edge.h)
 target_include_directories(visualize-graph PRIVATE include)
 
 ci_make_app(

@@ -8,7 +8,7 @@ CMake Deprecation Warning at C:/Users/rryrr/CLionProjects/Cinder/proj/cmake/modu
   specific short-term circumstances.  Projects should be ported to the NEW
   behavior and not rely on setting a policy to OLD.
 Call Stack (most recent call first):
-  CMakeLists.txt:66 (ci_make_app)
+  CMakeLists.txt:68 (ci_make_app)
 
 
 CMake Deprecation Warning at C:/Users/rryrr/CLionProjects/Cinder/proj/cmake/modules/cinderMakeApp.cmake:130 (cmake_policy):
@@ -20,9 +20,18 @@ CMake Deprecation Warning at C:/Users/rryrr/CLionProjects/Cinder/proj/cmake/modu
   specific short-term circumstances.  Projects should be ported to the NEW
   behavior and not rely on setting a policy to OLD.
 Call Stack (most recent call first):
-  CMakeLists.txt:73 (ci_make_app)
+  CMakeLists.txt:75 (ci_make_app)
 
 
 -- Configuring done
+CMake Error at CMakeLists.txt:44 (add_library):
+  Cannot find source file:
+
+    src/core/node_hash.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .ispc
+
+
 -- Generating done
--- Build files have been written to: C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug
+CMake Generate step failed.  Build files cannot be regenerated correctly.

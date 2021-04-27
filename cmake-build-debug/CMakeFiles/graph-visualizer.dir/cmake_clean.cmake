@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/graph-visualizer.dir/apps/cinder_app_main.cpp.obj"
+  "CMakeFiles/graph-visualizer.dir/src/core/edge.cpp.obj"
   "CMakeFiles/graph-visualizer.dir/src/core/graph.cpp.obj"
   "CMakeFiles/graph-visualizer.dir/src/core/node.cpp.obj"
+  "CMakeFiles/graph-visualizer.dir/src/visualizer/graph_view.cpp.obj"
   "CMakeFiles/graph-visualizer.dir/src/visualizer/graph_visualizer_app.cpp.obj"
   "Debug/graph-visualizer/graph-visualizer.exe"
   "Debug/graph-visualizer/graph-visualizer.exe.manifest"

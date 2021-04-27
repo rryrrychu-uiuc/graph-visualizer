@@ -224,6 +224,14 @@
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/apps/main.cpp">
 			<Option target="visualize-graph"/>
 		</Unit>
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/edge.h">
+			<Option target="visualize-graph"/>
+		</Unit>
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/edge.cpp">
+			<Option target="graph-visualizer"/>
+			<Option target="visualize-graph"/>
+			<Option target="graph-visualizer-test"/>
+		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/graph.cpp">
 			<Option target="graph-visualizer"/>
 			<Option target="visualize-graph"/>
@@ -234,14 +242,18 @@
 			<Option target="visualize-graph"/>
 			<Option target="graph-visualizer-test"/>
 		</Unit>
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/graph_view.cpp">
+			<Option target="graph-visualizer"/>
+			<Option target="graph-visualizer-test"/>
+		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/graph_visualizer_app.cpp">
 			<Option target="graph-visualizer"/>
 			<Option target="graph-visualizer-test"/>
 		</Unit>
-		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/graph_test.cpp">
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/edge_test.cpp">
 			<Option target="graph-visualizer-test"/>
 		</Unit>
-		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/graph_visualizer_test.cpp">
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/graph_test.cpp">
 			<Option target="graph-visualizer-test"/>
 		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/node_test.cpp">

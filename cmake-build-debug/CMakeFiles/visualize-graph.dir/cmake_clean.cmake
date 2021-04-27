@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/visualize-graph.dir/apps/main.cpp.obj"
+  "CMakeFiles/visualize-graph.dir/src/core/edge.cpp.obj"
   "CMakeFiles/visualize-graph.dir/src/core/graph.cpp.obj"
   "CMakeFiles/visualize-graph.dir/src/core/node.cpp.obj"
   "visualize-graph.exe"

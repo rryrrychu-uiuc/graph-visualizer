@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
+../include/core/edge.h
+node.h
+../include/core/node.h
+
 ../include/core/graph.h
 node.h
 ../include/core/node.h
+edge.h
+../include/core/edge.h
 vector
 -
 
@@ -17,6 +23,16 @@ glm/vec2.hpp
 -
 cinder/gl/gl.h
 ../include/core/cinder/gl/gl.h
+
+../include/visualizer/graph_visualizer_app.h
+core/graph.h
+-
+cinder/app/App.h
+../include/visualizer/cinder/app/App.h
+cinder/app/RendererGl.h
+../include/visualizer/cinder/app/RendererGl.h
+cinder/gl/gl.h
+../include/visualizer/cinder/gl/gl.h
 
 C:/Users/rryrr/CLionProjects/Cinder/include/boost/assert.hpp
 boost/config.hpp
@@ -8096,6 +8112,28 @@ C:/Users/rryrr/CLionProjects/Cinder/include/glm/detail/setup.hpp
 detail/func_vector_relational.inl
 C:/Users/rryrr/CLionProjects/Cinder/include/glm/detail/func_vector_relational.inl
 
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/apps/cinder_app_main.cpp
+visualizer/graph_visualizer_app.h
+-
+
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/edge.h
+node.h
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/node.h
+
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/graph.h
+node.h
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/node.h
+edge.h
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/edge.h
+vector
+-
+
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/node.h
+glm/vec2.hpp
+-
+cinder/gl/gl.h
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/cinder/gl/gl.h
+
 C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/visualizer/graph_visualizer_app.h
 core/graph.h
 -
@@ -8106,13 +8144,13 @@ C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/inc
 cinder/gl/gl.h
 C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/visualizer/cinder/gl/gl.h
 
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/graph.cpp
+../../include/core/graph.h
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/graph.h
+algorithm
+-
+
 C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/graph_visualizer_app.cpp
 ../../include/visualizer/graph_visualizer_app.h
 C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/visualizer/graph_visualizer_app.h
-cinder/app/App.h
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/cinder/app/App.h
-cinder/app/RendererGl.h
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/cinder/app/RendererGl.h
-cinder/gl/gl.h
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/cinder/gl/gl.h
 
