@@ -21,7 +21,7 @@ namespace graph {
              * Draw all of the nodes and edges of a certain graph
              * @param visualized_graph 
              */
-            void Draw(Graph visualized_graph);
+            void Draw(const Graph& visualized_graph);
             
             /**
              * Change the location of a node
@@ -43,9 +43,12 @@ namespace graph {
 
             //draw the edges of a given graph
             void DrawEdges(Graph visualized_graph);
+            
+            //write the value of the label on the node
+            void DrawLabel(const Node& target_node);
 
             //check if a location is not in the bounds of the GraphView
-            bool LocationOutOfBounds(vec2 loc);
+            bool LocationOutOfBounds(vec2 loc) const;
         };
     }
 }
