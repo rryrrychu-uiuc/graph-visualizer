@@ -435,6 +435,33 @@ tests\edge_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\edge_test.cpp.s
 .PHONY : tests\edge_test.cpp.s
 
+tests\graph_editor_test.obj: tests\graph_editor_test.cpp.obj
+
+.PHONY : tests\graph_editor_test.obj
+
+# target to build an object file
+tests\graph_editor_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\graph_editor_test.cpp.obj
+.PHONY : tests\graph_editor_test.cpp.obj
+
+tests\graph_editor_test.i: tests\graph_editor_test.cpp.i
+
+.PHONY : tests\graph_editor_test.i
+
+# target to preprocess a source file
+tests\graph_editor_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\graph_editor_test.cpp.i
+.PHONY : tests\graph_editor_test.cpp.i
+
+tests\graph_editor_test.s: tests\graph_editor_test.cpp.s
+
+.PHONY : tests\graph_editor_test.s
+
+# target to generate assembly for a file
+tests\graph_editor_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\graph_editor_test.cpp.s
+.PHONY : tests\graph_editor_test.cpp.s
+
 tests\graph_test.obj: tests\graph_test.cpp.obj
 
 .PHONY : tests\graph_test.obj
@@ -461,6 +488,33 @@ tests\graph_test.s: tests\graph_test.cpp.s
 tests\graph_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\graph_test.cpp.s
 .PHONY : tests\graph_test.cpp.s
+
+tests\graph_view_test.obj: tests\graph_view_test.cpp.obj
+
+.PHONY : tests\graph_view_test.obj
+
+# target to build an object file
+tests\graph_view_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\graph_view_test.cpp.obj
+.PHONY : tests\graph_view_test.cpp.obj
+
+tests\graph_view_test.i: tests\graph_view_test.cpp.i
+
+.PHONY : tests\graph_view_test.i
+
+# target to preprocess a source file
+tests\graph_view_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\graph_view_test.cpp.i
+.PHONY : tests\graph_view_test.cpp.i
+
+tests\graph_view_test.s: tests\graph_view_test.cpp.s
+
+.PHONY : tests\graph_view_test.s
+
+# target to generate assembly for a file
+tests\graph_view_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\graph_view_test.cpp.s
+.PHONY : tests\graph_view_test.cpp.s
 
 tests\node_test.obj: tests\node_test.cpp.obj
 
@@ -555,9 +609,15 @@ help:
 	@echo ... tests/edge_test.obj
 	@echo ... tests/edge_test.i
 	@echo ... tests/edge_test.s
+	@echo ... tests/graph_editor_test.obj
+	@echo ... tests/graph_editor_test.i
+	@echo ... tests/graph_editor_test.s
 	@echo ... tests/graph_test.obj
 	@echo ... tests/graph_test.i
 	@echo ... tests/graph_test.s
+	@echo ... tests/graph_view_test.obj
+	@echo ... tests/graph_view_test.i
+	@echo ... tests/graph_view_test.s
 	@echo ... tests/node_test.obj
 	@echo ... tests/node_test.i
 	@echo ... tests/node_test.s

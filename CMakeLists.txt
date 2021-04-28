@@ -41,7 +41,7 @@ FetchContent_Declare(
 FetchContent_GetProperties(catch2)
 if(NOT catch2_POPULATED)
     FetchContent_Populate(catch2)
-    add_library(catch2 INTERFACE src/visualizer/graph_manipulator_app.cpp include/visualizer/graph_manipulator_app.h src/core/graph.cpp include/core/graph.h apps/cinder_app_main.cpp src/core/node.cpp include/core/node.h tests/node_test.cpp tests/graph_test.cpp src/visualizer/graph_view.cpp include/visualizer/graph_view.h tests/edge_test.cpp src/visualizer/graph_editor.cpp include/visualizer/graph_editor.h)
+    add_library(catch2 INTERFACE src/visualizer/graph_manipulator_app.cpp include/visualizer/graph_manipulator_app.h src/core/graph.cpp include/core/graph.h apps/cinder_app_main.cpp src/core/node.cpp include/core/node.h tests/node_test.cpp tests/graph_test.cpp src/visualizer/graph_view.cpp include/visualizer/graph_view.h tests/edge_test.cpp src/visualizer/graph_editor.cpp include/visualizer/graph_editor.h tests/graph_editor_test.cpp tests/graph_view_test.cpp)
     target_include_directories(catch2 INTERFACE ${catch2_SOURCE_DIR}/single_include)
 endif()
 
@@ -61,7 +61,9 @@ list(APPEND SOURCE_FILES    ${CORE_SOURCE_FILES}
 
 list(APPEND TEST_FILES  tests/node_test.cpp
                         tests/graph_test.cpp
-                        tests/edge_test.cpp)
+                        tests/edge_test.cpp
+                        tests/graph_editor_test.cpp
+                        tests/graph_view_test.cpp)
 
 add_executable(visualize-graph apps/main.cpp ${CORE_SOURCE_FILES} src/core/edge.cpp include/core/edge.h)
 target_include_directories(visualize-graph PRIVATE include)

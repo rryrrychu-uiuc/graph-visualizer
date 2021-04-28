@@ -1,5 +1,10 @@
 #include "../../include/core/node.h"
 
+Node::Node() {
+    data_ = -1;
+    location_ = vec2(-1,-1);
+}
+
 Node::Node(int data) {
     data_ = data;
     location_ = vec2(-1,-1);

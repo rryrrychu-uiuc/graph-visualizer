@@ -10,6 +10,9 @@ using std::vector;
 
 class Node {
 public:
+    
+    Node();
+    
     /**
      * Constructor that only takes the value stored in the node
      * @param data value to be stored in the node
