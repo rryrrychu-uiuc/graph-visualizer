@@ -121,6 +121,21 @@ namespace graph {
         return false;
     }
 
+    bool Graph::EdgeExists(const Node start_node, const Node end_node) {
+        for(auto& adj_node: graph_mappings_.at(start_node)) {
+            if(*adj_node == end_node) {
+                return true;
+            }
+        }
+        for(auto& adj_node: graph_mappings_.at(end_node)) {
+            if(*adj_node == start_node) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
     void Graph::clear() {
         graph_mappings_.clear();
         map_size = 0;

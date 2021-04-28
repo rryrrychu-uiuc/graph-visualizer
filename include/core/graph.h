@@ -68,6 +68,11 @@ namespace graph {
         bool IsInGraph(const Node& to_check);
         
         /**
+         * Check if an edge already exists in the graph
+         */
+        bool EdgeExists(const Node start_node, const Node end_node);
+        
+        /**
          * Delete every node from the graph
          */
         void clear();

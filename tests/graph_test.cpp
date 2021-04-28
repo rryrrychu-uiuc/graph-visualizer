@@ -192,3 +192,8 @@ TEST_CASE("Test Clearing Map") {
     REQUIRE(test_graph.GetNodes().empty());
 }
 
+//TODO: add test cases for one sided and two sided edges and edges that don't already exist
+TEST_CASE("Test Edge Already Exists") {
+    
+}
+
