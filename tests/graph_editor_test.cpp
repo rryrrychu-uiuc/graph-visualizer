@@ -125,3 +125,7 @@ TEST_CASE("NodeExistsInGraph Test") {
         REQUIRE(test_editor.NodeExistsInGraph(valid_node));
     }
 }
+
+TEST_CASE("Clear editor") {
+    
+}

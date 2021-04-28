@@ -27,6 +27,8 @@ namespace graph {
                 graph_editor_.CreateNode(&visualized_graph, event.getPos());
             } else if (app_setting_ == kAddEdgeMode) {
                 graph_editor_.CreateEdge(&visualized_graph, event.getPos());
+            } else if (app_setting_ == kDeleteMode) {
+                graph_editor_.DeleteNode(&visualized_graph, event.getPos());
             }
         }
 

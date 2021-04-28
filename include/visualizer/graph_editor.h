@@ -21,6 +21,8 @@ public:
     
     bool NodeExistsInGraph(Node test_node);
     
+    void clear();
+    
 private:
     const float kDefaultRadius;
     vector<Node> nodes_to_bridge;

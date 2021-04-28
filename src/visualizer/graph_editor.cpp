@@ -16,7 +16,11 @@ void GraphEditor::CreateNode(Graph *target_graph, vec2 location) {
 
 void GraphEditor::CreateEdge(Graph *target_graph, vec2 location) {
     Node target_node = GetNodeAtLocation(target_graph, location);
-    if(!NodeExistsInGraph(target_node) || target_node == nodes_to_bridge[0]) {
+    if(!NodeExistsInGraph(target_node)) {
+        return;
+    }
+    
+    if(!nodes_to_bridge.empty() && target_node == nodes_to_bridge[0]) {
         return;
     }
     
@@ -51,5 +55,9 @@ Node GraphEditor::GetNodeAtLocation(Graph *target_graph, vec2 location) {
 
 bool GraphEditor::NodeExistsInGraph(Node test_node) {
     return test_node.GetLocation() != vec2(-1,-1) && test_node.GetValue() != -1;
+}
+
+void GraphEditor::clear() {
+    nodes_to_bridge.clear();
 }
 
