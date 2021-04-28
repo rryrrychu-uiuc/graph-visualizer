@@ -4,7 +4,26 @@
 
 #include "core/graph.h"
 
+using namespace graph;
+
 class GraphEditor {
+public:
+    
+    explicit GraphEditor(float radius);
+    
+    void CreateNode(Graph *target_graph, vec2 location);
+    
+    void CreateEdge(Graph *target_graph, vec2 location);
+    
+    void DeleteNode(Graph *target_graph, vec2 location);
+    
+    Node GetNodeAtLocation(Graph *target_graph, vec2 location);
+    
+    bool NodeExistsInGraph(Node test_node);
+    
+private:
+    const float kDefaultRadius;
+    vector<Node> nodes_to_bridge;
 
 };
 
