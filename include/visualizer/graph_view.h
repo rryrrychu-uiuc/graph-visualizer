@@ -30,18 +30,24 @@ namespace graph {
              */
             void MoveNode(Graph* visualized_graph, vec2 new_location);
             
+            /**
+             * Checks if two nodes overlap
+             */
+            bool TouchesOtherNodes(Graph* visualized_graph, Node current_node, vec2 current_location) const;
+            
         private:
             const double kWindowSize;
             const double kMargin;
             const float kDefaultRadius;
+            
             const ci::Color kDefaultColor;
             const ci::Color kFontColor;
             const ci::Font kDefaultFont;
 
-            //draw the nodes of a given graph
+            //draw the nodes of a given graph represented by circles
             void DrawNodes(Graph visualized_graph);
 
-            //draw the edges of a given graph
+            //draw the edges of a given graph represented by lines
             void DrawEdges(Graph visualized_graph);
             
             //write the value of the label on the node
