@@ -170,6 +170,11 @@ TEST_CASE("Test Deleting a Node") {
     }
 }
 
+//TODO: add test cases for deleting an edge
+TEST_CASE("Test Deleting an Edge") {
+    
+}
+
 TEST_CASE("Test Clearing Map") {
     Node test_node1(10, vec2(0,0));
     Node test_node2(20, vec2(1,1));

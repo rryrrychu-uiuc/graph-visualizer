@@ -54,7 +54,7 @@ namespace graph {
             void DrawLabel(const Node& target_node);
 
             //check if a location is not in the bounds of the GraphView
-            bool LocationOutOfBounds(vec2 loc) const;
+            bool IsOutOfBounds(vec2 location) const;
         };
     }
 }

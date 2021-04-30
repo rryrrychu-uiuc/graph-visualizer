@@ -39,10 +39,15 @@ namespace graph {
 
         /**
          * Delete a node an all existences of edges from graph (including adjacencies)
-         * @param target_node 
          * @return true if the node is successfully deleted
          */
         bool DeleteNode(const Node& target_node);
+
+        /**
+        * Delete an edge between two nodes (including adjacencies)
+        * @return true if the node is successfully deleted
+        */
+        void DeleteEdge(Node *start_node, Node *end_node, bool single_direction);
 
         /**
          * Changes the location of a node
@@ -70,7 +75,7 @@ namespace graph {
         /**
          * Check if an edge already exists in the graph
          */
-        bool EdgeExists(const Node start_node, const Node end_node);
+        bool EdgeExists(const Node& start_node, const Node end_node);
         
         /**
          * Delete every node from the graph

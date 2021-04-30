@@ -15,7 +15,7 @@ namespace graph {
         }
 
         void GraphView::MoveNode(Graph *visualized_graph, vec2 new_location) {
-            if (LocationOutOfBounds(new_location)) {
+            if (IsOutOfBounds(new_location)) {
                 return;
             }
 
@@ -30,6 +30,19 @@ namespace graph {
             }
         }
 
+        bool GraphView::TouchesOtherNodes(Graph *visualized_graph, Node current_node, vec2 current_location) const {
+            //checks every node in the graph (aside from the current node) to see if any overlaps with the current node
+            for (auto &target_node: visualized_graph->GetNodes()) {
+                if(target_node == current_node) {
+                    continue;
+                }
+                if (glm::distance(current_location, target_node.GetLocation()) <= 2 * kDefaultRadius) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
         void GraphView::DrawNodes(Graph visualized_graph) {
             for (auto &target_node : visualized_graph.GetNodes()) {
                 ci::gl::color(kDefaultColor);
@@ -57,23 +70,10 @@ namespace graph {
                                kDefaultFont);
         }
 
-        bool GraphView::LocationOutOfBounds(vec2 loc) const {
-            float x = loc[0];
-            float y = loc[1];
+        bool GraphView::IsOutOfBounds(vec2 location) const {
+            float x = location[0];
+            float y = location[1];
             return x >= kWindowSize - kMargin || y >= kWindowSize - kMargin || x <= kMargin || y <= kMargin;
-        }
-
-        bool GraphView::TouchesOtherNodes(Graph *visualized_graph, Node current_node, vec2 current_location) const {
-            //checks every node in the graph (aside from the current node) to see if any overlaps with the current node
-            for (auto &target_node: visualized_graph->GetNodes()) {
-                if(target_node == current_node) {
-                    continue;
-                }
-                if (glm::distance(current_location, target_node.GetLocation()) <= 2 * kDefaultRadius) {
-                    return true;
-                }
-            }
-            return false;
         }
     }
 }

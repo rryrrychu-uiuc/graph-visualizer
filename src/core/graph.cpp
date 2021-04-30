@@ -72,7 +72,30 @@ namespace graph {
         map_size--;
         return true;
     }
-
+    
+    //TODO: add helper method that removes node from vector
+    void Graph::DeleteEdge(Node *start_node, Node *end_node, bool single_direction) {
+        vector<const Node *> new_start_adjacent_nodes;
+        for (auto & adjacent_node : graph_mappings_.at(*start_node)) {
+            if(*adjacent_node == *end_node) {
+                continue;
+            }
+            new_start_adjacent_nodes.push_back(adjacent_node);
+        }
+        graph_mappings_.at(*start_node) = new_start_adjacent_nodes;
+        
+        if(!single_direction) {
+            vector<const Node *> new_end_adjacent_nodes;
+            for (auto & adjacent_node : graph_mappings_.at(*end_node)) {
+                if(*adjacent_node == *start_node) {
+                    continue;
+                }
+                new_end_adjacent_nodes.push_back(adjacent_node);
+            }
+            graph_mappings_.at(*end_node) = new_end_adjacent_nodes;
+        }
+    }
+    
     bool Graph::SetLocation(const Node& target_node, vec2 new_location) {
         if (!IsInGraph(target_node)) {
             return false;
@@ -91,7 +114,6 @@ namespace graph {
             Node adj_node = *adjacent_node;
             AddEdge(&to_add, &adj_node, false);
         }
-
         return true;
     }
 
@@ -121,7 +143,7 @@ namespace graph {
         return false;
     }
 
-    bool Graph::EdgeExists(const Node start_node, const Node end_node) {
+    bool Graph::EdgeExists(const Node& start_node, const Node end_node) {
         for(auto& adj_node: graph_mappings_.at(start_node)) {
             if(*adj_node == end_node) {
                 return true;
@@ -132,13 +154,7 @@ namespace graph {
                 return true;
             }
         }
-        
         return false;
-    }
-
-    void Graph::clear() {
-        graph_mappings_.clear();
-        map_size = 0;
     }
 
     size_t Graph::size() const {
@@ -147,5 +163,10 @@ namespace graph {
 
     bool Graph::empty() const {
         return map_size == 0;
+    }
+    
+    void Graph::clear() {
+        graph_mappings_.clear();
+        map_size = 0;
     }
 }

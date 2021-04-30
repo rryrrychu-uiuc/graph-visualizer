@@ -10,47 +10,51 @@
 #include "graph_editor.h"
 
 namespace graph {
-    
-namespace visualizer {
 
-class GraphVisualizerApp : public ci::app::App {
-public:
-    
-    GraphVisualizerApp();
+    namespace visualizer {
 
-    void draw() override;
-    
-    void mouseDown(ci::app::MouseEvent event) override;
-    
-    void mouseDrag(ci::app::MouseEvent event) override;
+        class GraphVisualizerApp : public ci::app::App {
+        public:
+            GraphVisualizerApp();
 
-    void keyDown(ci::app::KeyEvent event) override;
+            void draw() override;
 
-    // provided that you can see the entire UI on your screen.
-    const double kWindowSize = 1000;
-    const double kMargin = 100;
-    
-    const float kDefaultRadius;
-    
-    const ci::Color kDefaultColor;
-    const ci::Color kFontColor;
-    const ci::Font kDefaultFont;
-private:
-    
-    GraphView graph_visualizer_;
-    GraphEditor graph_editor_;
-    Graph visualized_graph;
-    
-    char app_setting_;
-    //Change to enums
-    const char kMoveMode = 'M';
-    const char kAddNodeMode = 'N';
-    const char kDeleteMode = 'D';
-    const char kAddEdgeMode = 'E';
-    
-    void InitializeGraph();
-};
-}
+            void mouseDown(ci::app::MouseEvent event) override;
+
+            void mouseDrag(ci::app::MouseEvent event) override;
+
+            void keyDown(ci::app::KeyEvent event) override;
+            
+        private:
+            const double kWindowSize = 1000;
+            const double kMargin = 150;
+            
+            const float kDefaultRadius;
+            const ci::Color kDefaultColor;
+            const ci::Color kFontColor;
+            const ci::Font kDefaultFont;
+
+            const std::string kMoveMode = "Move Node";
+            const std::string kAddNodeMode = "Add Node";
+            const std::string kAddEdgeMode = "Add Edge";
+            const std::string kDeleteNodeMode = "Delete Node";
+            const std::string kDeleteEdgeMode = "Delete Edge";
+            
+            std::string app_setting_;
+
+            GraphView graph_visualizer_;
+            GraphEditor graph_editor_;
+            Graph visualized_graph;
+
+            void InitializeGraph();
+
+            void WriteCommandInstructions() const;
+
+            void DisplayCurrentCommand() const;
+            
+            void DisplayEdgeEditing() const;
+        };
+    }
 }
 
 #endif //FINAL_PROJECT_GRAPH_MANIPULATOR_APP_H
