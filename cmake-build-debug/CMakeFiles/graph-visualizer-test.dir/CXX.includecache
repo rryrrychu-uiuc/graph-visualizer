@@ -6,27 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../include/core/edge.h
-node.h
-../include/core/node.h
-
-../include/core/graph.h
-node.h
-../include/core/node.h
-edge.h
-../include/core/edge.h
-vector
--
-
 ../include/core/node.h
 glm/vec2.hpp
 -
 cinder/gl/gl.h
 ../include/core/cinder/gl/gl.h
-
-../include/visualizer/graph_editor.h
-core/graph.h
-../include/visualizer/core/graph.h
 
 C:/Users/rryrr/CLionProjects/Cinder/include/boost/assert.hpp
 boost/config.hpp
@@ -7832,14 +7816,10 @@ C:/Users/rryrr/CLionProjects/Cinder/include/glm/detail/setup.hpp
 detail/func_vector_relational.inl
 C:/Users/rryrr/CLionProjects/Cinder/include/glm/detail/func_vector_relational.inl
 
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/graph_editor_test.cpp
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/node_test.cpp
 catch2/catch.hpp
 -
 core/node.h
--
-core/graph.h
--
-visualizer/graph_editor.h
 -
 
 _deps/catch2-src/single_include/catch2/catch.hpp

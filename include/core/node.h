@@ -61,23 +61,9 @@ public:
      */
     bool operator<(const Node &ob) const;
 
-    /**
-     * Add mem location of node to the adjacency list
-     * @param adj_node node location to add
-     */
-    void AddAdjacentNode(Node *adj_node);
-
-    /**
-     * Checks if current node is adjacent to current node
-     * @param adj_node location of node to check
-     */
-    bool IsAdjacentTo(Node *target_node);
-
     vec2 GetLocation() const;
 
     int GetValue() const;
-
-    vector<Node *> GetAdjacentNodes();
 
     void SetLocation(vec2 location);
 
@@ -86,7 +72,6 @@ public:
 private:
     int data_;
     vec2 location_;
-    vector<Node *> adjacent_nodes_;
 };
 
 #endif //FINAL_PROJECT_NODE_H
