@@ -20,7 +20,7 @@ TEST_CASE("CreateNode Test") {
     SECTION("Valid Location") {
         GraphEditor test_editor(30, 1000, 150);
         test_editor.CreateNode(&test_graph, vec2(100, 100));
-        REQUIRE(test_graph.size() == 6);
+        REQUIRE(test_graph.size() == 5);
         for(auto& node: test_graph.GetNodes()) {
             if(node.GetValue() < 0){
                 REQUIRE(node.GetLocation() == vec2(100,100));

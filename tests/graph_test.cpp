@@ -170,9 +170,45 @@ TEST_CASE("Test Deleting a Node") {
     }
 }
 
-//TODO: add test cases for deleting an edge
 TEST_CASE("Test Deleting an Edge") {
+    Node test_node1(10, vec2(0,0));
+    Node test_node2(20, vec2(1,1));
+    Node test_node3(30, vec2(2, 2));
+    Node test_node4(40, vec2(3, 3));
+    Node test_node5(50, vec2(4, 4));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
     
+    test_graph.AddEdge(&test_node1, &test_node2, false);
+    test_graph.AddEdge(&test_node1, &test_node3, false);
+    test_graph.AddEdge(&test_node1, &test_node4, false);
+    test_graph.AddEdge(&test_node1, &test_node5, false);
+    test_graph.AddEdge(&test_node3, &test_node4, false);
+    test_graph.AddEdge(&test_node3, &test_node5, false);
+    
+    vector<Node> graph_nodes = test_graph.GetNodes();
+    
+    SECTION("Test Proper Edge Adding") {
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[0]).size() == 4);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[1]).size() == 1);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[2]).size() == 3);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[3]).size() == 2);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[4]).size() == 2);
+    }
+
+    SECTION("Test Proper Edge Deleting") {
+        test_graph.DeleteEdge(&test_node1, &test_node2, false);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[0]).size() == 3);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[1]).size() == 0);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[2]).size() == 3);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[3]).size() == 2);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[4]).size() == 2);
+    }
 }
 
 TEST_CASE("Test Clearing Map") {
@@ -197,8 +233,4 @@ TEST_CASE("Test Clearing Map") {
     REQUIRE(test_graph.GetNodes().empty());
 }
 
-//TODO: add test cases for one sided and two sided edges and edges that don't already exist
-TEST_CASE("Test Edge Already Exists") {
-    
-}
 
