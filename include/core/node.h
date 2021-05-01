@@ -10,7 +10,9 @@ using std::vector;
 
 class Node {
 public:
-    
+    /**
+     * Create a node with default values
+     */
     Node();
     
     /**
@@ -65,13 +67,18 @@ public:
 
     int GetValue() const;
 
+    ci::Color GetColor() const;
+    
     void SetLocation(vec2 location);
 
     void SetValue(int value);
+    
+    void SetColor(ci::Color color);
 
 private:
     int data_;
     vec2 location_;
+    ci::Color node_color_;
 };
 
 #endif //FINAL_PROJECT_NODE_H

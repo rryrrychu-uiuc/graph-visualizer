@@ -17,15 +17,23 @@ public:
     */
     Edge(Node* start_node, Node* end_node, bool is_two_sided);
     
-    bool IsTwoSided();
+    bool IsTwoSided() const;
     
     Node* GetStartNode();
     
     Node* GetEndNode();
     
+    int GetWeight();
+    
+    ci::Color GetEdgeColor();
+    
     void SetStartNode(Node* start_node);
     
     void SetEndNode(Node* end_node);
+    
+    void SetWeight(int new_weight);
+    
+    void SetEdgeColor(ci::Color new_color);
     
     /**
      * Change edge to be one sided
@@ -41,6 +49,8 @@ private:
     bool is_two_sided_;
     Node* start_;
     Node* end_;
+    int weight_;
+    ci::Color edge_color_;
 };
 
 #endif //FINAL_PROJECT_EDGE_H

@@ -66,12 +66,21 @@ int Node::GetValue() const {
     return data_;
 }
 
+ci::Color Node::GetColor() const {
+    return node_color_;
+}
+
+
 void Node::SetLocation(vec2 location) {
     location_ = location;
 }
 
 void Node::SetValue(int value) {
     data_ = value;
+}
+
+void Node::SetColor(ci::Color color) {
+    node_color_ = color;
 }
 
 bool Node::operator==( const Node& rhs) const {

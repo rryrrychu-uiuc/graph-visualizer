@@ -135,3 +135,8 @@ TEST_CASE("NodeExistsInGraph Test") {
 TEST_CASE("Clear editor") {
     
 }
+
+//TODO: add test cases for one sided and two sided edges and edges that don't already exist
+TEST_CASE("Test Edge Already Exists") {
+    
+}
