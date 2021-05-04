@@ -3,7 +3,7 @@
 #include <core/graph.h>
 #include <visualizer/graph_editor.h>
 
-TEST_CASE("CreateNode Test") {
+TEST_CASE("Test CreateNode") {
     Node test_node1(10, vec2(0,0));
     Node test_node2(20, vec2(1,1));
     Node test_node3(30, vec2(2, 2));
@@ -33,14 +33,75 @@ TEST_CASE("CreateNode Test") {
         test_editor.CreateNode(&test_graph, vec2(5, 5));
         REQUIRE(test_graph.size() == 5);
     }
+}
+
+TEST_CASE("Test CreateEdge") {
+    Node test_node1(10, vec2(200, 200));
+    Node test_node2(20, vec2(300, 300));
+    Node test_node3(30, vec2(400, 400));
+    Node test_node4(40, vec2(500, 500));
+    Node test_node5(50, vec2(600, 600));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    GraphEditor test_editor(30, 1000, 150);
     
+    SECTION("No node at initial click location") {
+        test_editor.CreateEdge(&test_graph, vec2(700, 100));
+        REQUIRE(test_editor.empty());
+    }
+    
+    SECTION("Valid initial click location") {
+        test_editor.CreateEdge(&test_graph, vec2(210, 210));
+        REQUIRE_FALSE(test_editor.empty());
+        REQUIRE(test_editor.GetVectorValues().find("10") != std::string::npos);
+    }
+    
+    SECTION("No node at followup click location") {
+        test_editor.CreateEdge(&test_graph, vec2(210, 210));
+        test_editor.CreateEdge(&test_graph, vec2(700, 100));
+        REQUIRE_FALSE(test_editor.empty());
+        REQUIRE(test_editor.GetVectorValues().find("10") != std::string::npos);
+    }
+    
+    SECTION("Followup click same location as initial") {
+        test_editor.CreateEdge(&test_graph, vec2(210, 210));
+        test_editor.CreateEdge(&test_graph, vec2(210, 210));
+        REQUIRE_FALSE(test_editor.empty());
+        REQUIRE(test_editor.GetVectorValues().find("10") != std::string::npos);
+    }
+    
+    SECTION("Edge already exists") {
+        test_graph.AddEdge(&test_node1, &test_node2, false);
+        test_editor.CreateEdge(&test_graph, vec2(210, 210));
+        REQUIRE_FALSE(test_editor.empty());
+        REQUIRE(test_editor.GetVectorValues().find("10") != std::string::npos);
+        test_editor.CreateEdge(&test_graph, vec2(300, 300));
+        REQUIRE(test_editor.empty());
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).size() == 1);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).size() == 1);
+    }
+    
+    SECTION("Successful edge creation") {
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).empty());
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).empty());
+
+        test_editor.CreateEdge(&test_graph, vec2(210, 210));
+        test_editor.CreateEdge(&test_graph, vec2(300, 300));
+        REQUIRE(test_editor.empty());
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).size() == 1);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).size() == 1);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).at(0)->GetValue() == 20);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).at(0)->GetValue() == 10);
+    }
 }
 
-TEST_CASE("CreateEdge Test") {
-
-}
-
-TEST_CASE("DeleteNode Test") {
+TEST_CASE("Test DeleteNode") {
     Node test_node1(10, vec2(200,200));
     Node test_node2(20, vec2(500,100));
     Node test_node3(30, vec2(100, 800));
@@ -70,12 +131,72 @@ TEST_CASE("DeleteNode Test") {
     }
 }
 
-//TODO: Write test cases for DeleteEdge
-TEST_CASE("DeleteEdge Test") {
-    
+TEST_CASE("Test DeleteEdge") {
+    Node test_node1(10, vec2(200, 200));
+    Node test_node2(20, vec2(300, 300));
+    Node test_node3(30, vec2(400, 400));
+    Node test_node4(40, vec2(500, 500));
+    Node test_node5(50, vec2(600, 600));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    GraphEditor test_editor(30, 1000, 150);
+
+    SECTION("No node at initial click location") {
+        test_editor.DeleteEdge(&test_graph, vec2(900,900));
+        REQUIRE(test_editor.empty());
+    }
+
+    SECTION("Valid initial click location") {
+        test_editor.DeleteEdge(&test_graph, vec2(200,200));
+        REQUIRE_FALSE(test_editor.empty());
+        REQUIRE(test_editor.GetVectorValues().find("10") != std::string::npos);
+    }
+
+    SECTION("No node at followup click location") {
+        test_editor.DeleteEdge(&test_graph, vec2(200,200));
+        test_editor.DeleteEdge(&test_graph, vec2(900,900));
+        REQUIRE_FALSE(test_editor.empty());
+        REQUIRE(test_editor.GetVectorValues().find("10") != std::string::npos);
+    }
+
+    SECTION("Follow-up click same location as initial") {
+        test_editor.DeleteEdge(&test_graph, vec2(200,200));
+        test_editor.DeleteEdge(&test_graph, vec2(200,200));
+        REQUIRE_FALSE(test_editor.empty());
+        REQUIRE(test_editor.GetVectorValues().find("10") != std::string::npos);
+    }
+
+    SECTION("No edge exists") {
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).empty());
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).empty());
+        test_editor.DeleteEdge(&test_graph, vec2(200,200));
+        test_editor.DeleteEdge(&test_graph, vec2(300,300));
+        REQUIRE(test_editor.empty());
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).empty());
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).empty());
+    }
+
+    SECTION("Successful edge deletion") {
+        test_graph.AddEdge(&test_node1, &test_node2, false);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).size() == 1);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).size() == 1);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).at(0)->GetValue() == 20);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).at(0)->GetValue() == 10);
+        test_editor.DeleteEdge(&test_graph, vec2(200,200));
+        test_editor.DeleteEdge(&test_graph, vec2(300,300));
+        REQUIRE(test_editor.empty());
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).empty());
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).empty());
+    }
 }
 
-TEST_CASE("GetNodeAtLocation Test") {
+TEST_CASE("Test GetNodeAtLocation") {
     Node test_node1(10, vec2(200,200));
     Node test_node2(20, vec2(500,100));
     Node test_node3(30, vec2(100, 800));
@@ -104,7 +225,7 @@ TEST_CASE("GetNodeAtLocation Test") {
     }
 }
 
-TEST_CASE("NodeExistsInGraph Test") {
+TEST_CASE("Test NodeExistsInGraph") {
     Node test_node1(10, vec2(200,200));
     Node test_node2(20, vec2(500,100));
     Node test_node3(30, vec2(100, 800));
@@ -131,12 +252,87 @@ TEST_CASE("NodeExistsInGraph Test") {
     }
 }
 
-//TODO: Write test cases for clear
-TEST_CASE("Clear editor") {
-    
+TEST_CASE("Test IsOutOfBounds") {
+    GraphEditor test_editor(30, 1000, 150);
+
+    SECTION("In bounds left") {
+        REQUIRE_FALSE(test_editor.IsOutOfBounds(vec2(151, 500)));
+    }
+
+    SECTION("In bounds right") {
+        REQUIRE_FALSE(test_editor.IsOutOfBounds(vec2(849, 500)));
+    }
+
+    SECTION("In bounds top") {
+        REQUIRE_FALSE(test_editor.IsOutOfBounds(vec2(500, 151)));
+    }
+
+    SECTION("In bounds bottom") {
+        REQUIRE_FALSE(test_editor.IsOutOfBounds(vec2(500, 849)));
+    }
+
+    SECTION("Out of bounds left") {
+        REQUIRE(test_editor.IsOutOfBounds(vec2(150, 500)));
+    }
+
+    SECTION("Out of bounds right") {
+        REQUIRE(test_editor.IsOutOfBounds(vec2(850, 500)));
+    }
+
+    SECTION("Out of bounds up") {
+        REQUIRE(test_editor.IsOutOfBounds(vec2(500, 150)));
+    }
+
+    SECTION("Out of bounds down") {
+        REQUIRE(test_editor.IsOutOfBounds(vec2(500, 850)));
+    }    
 }
 
-//TODO: add test cases for one sided and two sided edges and edges that don't already exist
-TEST_CASE("Test Edge Already Exists") {
+TEST_CASE("Test empty") {
+    Node test_node1(10, vec2(200, 200));
+    Node test_node2(20, vec2(300, 300));
+    Node test_node3(30, vec2(400, 400));
+    Node test_node4(40, vec2(500, 500));
+    Node test_node5(50, vec2(600, 600));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    GraphEditor test_editor(30, 1000, 150);
     
+    SECTION("Is empty") {
+        REQUIRE(test_editor.empty());
+    }
+
+    SECTION("Is not empty") {
+        test_editor.CreateEdge(&test_graph, vec2(200,200));
+        REQUIRE_FALSE(test_editor.empty());
+    }
+}
+
+TEST_CASE("Test Clear editor") {
+    Node test_node1(10, vec2(200, 200));
+    Node test_node2(20, vec2(300, 300));
+    Node test_node3(30, vec2(400, 400));
+    Node test_node4(40, vec2(500, 500));
+    Node test_node5(50, vec2(600, 600));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    GraphEditor test_editor(30, 1000, 150);
+
+    REQUIRE(test_editor.empty());
+    test_editor.CreateEdge(&test_graph, vec2(200,200));
+    REQUIRE_FALSE(test_editor.empty());
+    test_editor.clear();
+    REQUIRE(test_editor.empty());
 }

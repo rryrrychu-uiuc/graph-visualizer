@@ -1,6 +1,5 @@
 C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug/CMakeFiles/graph-visualizer.dir
 C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug/CMakeFiles/catch2.dir
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug/CMakeFiles/visualize-graph.dir
 C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug/CMakeFiles/graph-visualizer-test.dir
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -83,62 +83,6 @@
 					<DistClean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="visualize-graph">
-				<Option output="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug/visualize-graph.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\winrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 visualize-graph"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="visualize-graph/fast">
-				<Option output="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug/visualize-graph.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\winrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 visualize-graph/fast"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug"/>
 				<Option type="4"/>
@@ -217,29 +161,30 @@
 					<DistClean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/apps/cinder_app_main.cpp">
 			<Option target="graph-visualizer"/>
 		</Unit>
-		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/apps/main.cpp">
-			<Option target="visualize-graph"/>
-		</Unit>
-		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/include/core/edge.h">
-			<Option target="visualize-graph"/>
-		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/edge.cpp">
 			<Option target="graph-visualizer"/>
-			<Option target="visualize-graph"/>
 			<Option target="graph-visualizer-test"/>
 		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/graph.cpp">
 			<Option target="graph-visualizer"/>
-			<Option target="visualize-graph"/>
 			<Option target="graph-visualizer-test"/>
 		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/core/node.cpp">
 			<Option target="graph-visualizer"/>
-			<Option target="visualize-graph"/>
 			<Option target="graph-visualizer-test"/>
 		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/graph_editor.cpp">

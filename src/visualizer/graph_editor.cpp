@@ -3,9 +3,7 @@
 
 GraphEditor::GraphEditor(float radius, double window_size, double margin) : kDefaultRadius(radius), kMaxNodeValue(99),
                                                                             kMinNodeValue(1), kWindowSize(window_size),
-                                                                            kMargin(margin) {
-
-}
+                                                                            kMargin(margin) {}
 
 void GraphEditor::CreateNode(Graph *target_graph, vec2 location) {
     if(IsOutOfBounds(location)) {

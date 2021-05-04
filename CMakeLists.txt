@@ -65,9 +65,6 @@ list(APPEND TEST_FILES  tests/node_test.cpp
                         tests/graph_editor_test.cpp
                         tests/graph_view_test.cpp)
 
-add_executable(visualize-graph apps/main.cpp ${CORE_SOURCE_FILES} src/core/edge.cpp include/core/edge.h)
-target_include_directories(visualize-graph PRIVATE include)
-
 ci_make_app(
         APP_NAME        graph-visualizer
         CINDER_PATH     ${CINDER_PATH}

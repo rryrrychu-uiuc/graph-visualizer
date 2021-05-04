@@ -41,6 +41,4 @@ private:
     vector<Node> nodes_to_bridge;
     
 };
-
-
 #endif //FINAL_PROJECT_GRAPH_EDITOR_H

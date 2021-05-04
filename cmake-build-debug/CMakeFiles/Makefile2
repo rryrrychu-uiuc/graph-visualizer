@@ -58,7 +58,6 @@ CMAKE_BINARY_DIR = C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project
 # The main recursive "all" target.
 all: CMakeFiles\graph-visualizer.dir\all
 all: CMakeFiles\catch2.dir\all
-all: CMakeFiles\visualize-graph.dir\all
 all: CMakeFiles\graph-visualizer-test.dir\all
 
 .PHONY : all
@@ -71,7 +70,6 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles\graph-visualizer.dir\clean
 clean: CMakeFiles\catch2.dir\clean
-clean: CMakeFiles\visualize-graph.dir\clean
 clean: CMakeFiles\graph-visualizer-test.dir\clean
 
 .PHONY : clean
@@ -129,33 +127,6 @@ catch2: CMakeFiles\catch2.dir\rule
 CMakeFiles\catch2.dir\clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\catch2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\catch2.dir\clean
 .PHONY : CMakeFiles\catch2.dir\clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/visualize-graph.dir
-
-# All Build rule for target.
-CMakeFiles\visualize-graph.dir\all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles --progress-num=22,23,24,25,26 "Built target visualize-graph"
-.PHONY : CMakeFiles\visualize-graph.dir\all
-
-# Build rule for subdir invocation for target.
-CMakeFiles\visualize-graph.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rryrr\CLionProjects\Cinder\my-projects\final-project-rryrrychu-uiuc\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles\visualize-graph.dir\rule
-
-# Convenience name for target.
-visualize-graph: CMakeFiles\visualize-graph.dir\rule
-
-.PHONY : visualize-graph
-
-# clean rule for target.
-CMakeFiles\visualize-graph.dir\clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\visualize-graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\visualize-graph.dir\clean
-.PHONY : CMakeFiles\visualize-graph.dir\clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/graph-visualizer-test.dir
