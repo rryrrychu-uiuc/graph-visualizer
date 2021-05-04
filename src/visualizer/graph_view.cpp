@@ -3,8 +3,8 @@
 GraphView::GraphView(double window_size, double margin) : kWindowSize(window_size), kMargin(margin),
                                                           kDefaultColor(ci::Color("orange")),
                                                           kFontColor(ci::Color("black")),
-                                                          kDefaultFont(ci::Font("Times New Roman", 40)),
-                                                          kDefaultRadius(30) {}
+                                                          kDefaultRadius(30) {
+}
 
 void GraphView::Draw(const Graph &visualized_graph) {
     ci::gl::clear();
@@ -65,7 +65,7 @@ void GraphView::DrawLabel(const Node &target_node) {
     location[0] = location[0] - kDefaultRadius / 2;
     location[1] = location[1] - kDefaultRadius / 2;
     ci::gl::drawString(std::to_string(target_node.GetValue()), location, kFontColor,
-                       kDefaultFont);
+                       ci::Font("Times New Roman", 40));
 }
 
 bool GraphView::IsOutOfBounds(vec2 location) const {

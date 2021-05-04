@@ -62,7 +62,6 @@ private:
 
     const ci::Color kDefaultColor;
     const ci::Color kFontColor;
-    const ci::Font kDefaultFont;
 };
 
 #endif 
