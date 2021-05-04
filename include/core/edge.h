@@ -27,12 +27,24 @@ public:
     
     ci::Color GetEdgeColor();
     
+    /**
+     * Change the first node in the edge
+     */
     void SetStartNode(Node* start_node);
-    
+
+    /**
+     * Change the second node in the edge
+     */    
     void SetEndNode(Node* end_node);
-    
+
+    /**
+    * Change the weight/value of the edge
+    */
     void SetWeight(int new_weight);
-    
+
+    /**
+    * Change the color of the edge
+    */    
     void SetEdgeColor(ci::Color new_color);
     
     /**

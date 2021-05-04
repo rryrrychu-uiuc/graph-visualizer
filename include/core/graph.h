@@ -12,6 +12,9 @@ using std::map;
 namespace graph {
     class Graph {
     public:
+        /**
+         * Default constructor for a graph
+         */
         Graph();
 
         /**
@@ -70,7 +73,7 @@ namespace graph {
          * @param to_check node to check
          * @return true if the node is in the graph
          */
-        bool IsInGraph(const Node& to_check);
+        bool NodeExists(const Node& to_check);
         
         /**
          * Check if an edge already exists in the graph

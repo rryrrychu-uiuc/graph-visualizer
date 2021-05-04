@@ -52,7 +52,7 @@ namespace graph {
     }
 
     bool Graph::DeleteNode(const Node& target_node) {
-        if (!IsInGraph(target_node)) {
+        if (!NodeExists(target_node)) {
             return false;
         }
 
@@ -97,7 +97,7 @@ namespace graph {
     }
     
     bool Graph::SetLocation(const Node& target_node, vec2 new_location) {
-        if (!IsInGraph(target_node)) {
+        if (!NodeExists(target_node)) {
             return false;
         }
 
@@ -118,7 +118,7 @@ namespace graph {
     }
 
     bool Graph::SetValue(const Node& target_node, int new_value) {
-        if (!IsInGraph(target_node)) {
+        if (!NodeExists(target_node)) {
             return false;
         }
 
@@ -134,7 +134,7 @@ namespace graph {
         return true;
     }
 
-    bool Graph::IsInGraph(const Node& to_check) {
+    bool Graph::NodeExists(const Node& to_check) {
         for (auto & graph_mapping : graph_mappings_) {
             if (to_check == graph_mapping.first) {
                 return true;
@@ -144,11 +144,16 @@ namespace graph {
     }
 
     bool Graph::EdgeExists(const Node& start_node, const Node end_node) {
+        if(!NodeExists(start_node) || !NodeExists(end_node)) {
+            return false;
+        }
+        
         for(auto& adj_node: graph_mappings_.at(start_node)) {
             if(*adj_node == end_node) {
                 return true;
             }
         }
+        
         for(auto& adj_node: graph_mappings_.at(end_node)) {
             if(*adj_node == start_node) {
                 return true;

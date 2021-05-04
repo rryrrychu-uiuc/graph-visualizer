@@ -3,27 +3,32 @@
 Node::Node() {
     data_ = -1;
     location_ = vec2(-1,-1);
+    node_color_ = ci::Color("orange");
 }
 
 Node::Node(int data) {
     data_ = data;
     location_ = vec2(-1,-1);
+    node_color_ = ci::Color("orange");
 }
 
 Node::Node(int data, vec2 location) {
     location_ = location;
     data_ = data;
+    node_color_ = ci::Color("orange");
 }
 
 Node::Node(const Node &source) {
     location_ = source.location_;
     data_ = source.data_;
+    node_color_ = source.node_color_;
     
 }
 
 Node::Node(Node &&source) noexcept {
     location_ = source.location_;
     data_ = source.data_;
+    node_color_ = source.node_color_;
     
     source.data_ = 0;
     source.location_ = vec2(-1,-1);
@@ -32,6 +37,7 @@ Node::Node(Node &&source) noexcept {
 Node::~Node() {
     data_ = 0;
     location_ = vec2(-1,-1);
+
 }
 
 Node &Node::operator=(const Node &source) {
@@ -41,6 +47,7 @@ Node &Node::operator=(const Node &source) {
     
     location_ = source.location_;
     data_ = source.data_;
+    node_color_ = source.node_color_;
     
     return *this;
 }
@@ -52,6 +59,7 @@ Node &Node::operator=(Node &&source) noexcept {
     
     location_ = source.location_;
     data_ = source.data_;
+    node_color_ = source.node_color_;
 
     source.data_ = 0;
     source.location_ = vec2(-1,-1);
@@ -88,5 +96,5 @@ bool Node::operator==( const Node& rhs) const {
 }
 
 bool Node::operator<(const Node &ob) const {
-    return data_ < ob.data_ || (data_ == ob.data_ && location_.x < ob.location_.x) || (data_ == ob.data_ && location_.x == ob.location_.x && location_.y < location_.y);
+    return data_ < ob.data_ || (data_ == ob.data_ && location_.x < ob.location_.x) || (data_ == ob.data_ && location_.x == ob.location_.x && location_.y < ob.location_.y);
 }

@@ -94,6 +94,26 @@ TEST_CASE("Changing End Node Test") {
     }
 }
 
+TEST_CASE("Changing the Weight Test") {
+    Node node_1(12);
+    Node node_2(13);
+
+    Edge test_edge(&node_1, &node_2, false);
+    REQUIRE(test_edge.GetWeight() == -1);
+    test_edge.SetWeight(12);
+    REQUIRE(test_edge.GetWeight() == 12);
+}
+
+TEST_CASE("Changing the Edge Color Test") {
+    Node node_1(12);
+    Node node_2(13);
+
+    Edge test_edge(&node_1, &node_2, false);
+    REQUIRE(test_edge.GetEdgeColor() == ci::Color("blue"));
+    test_edge.SetEdgeColor(ci::Color("yellow"));
+    REQUIRE(test_edge.GetEdgeColor() == ci::Color("yellow"));
+}
+
 TEST_CASE("ChangeToOneSided Test") {
     Node node_1(12);
     Node node_2(13);

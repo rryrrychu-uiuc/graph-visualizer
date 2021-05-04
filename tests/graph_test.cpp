@@ -20,6 +20,152 @@ TEST_CASE("Test Adding Nodes to Graph") {
     }
 }
 
+TEST_CASE("Test Adding Edge to Graph") {
+    Node test_node1(10, vec2(0,0));
+    Node test_node2(20, vec2(1,1));
+    Node test_node3(30, vec2(2, 2));
+    Node test_node4(40, vec2(3, 3));
+    Node test_node5(50, vec2(4, 4));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    SECTION("Test Multiple Edges") {
+        test_graph.AddEdge(&test_node1, &test_node2, false);
+        test_graph.AddEdge(&test_node1, &test_node3, false);
+        test_graph.AddEdge(&test_node1, &test_node4, false);
+        test_graph.AddEdge(&test_node1, &test_node5, false);
+
+        int expected_values[4]  = {20,30,40,50};
+        vector<Node> graph_nodes = test_graph.GetNodes();
+        for(auto & graph_node : graph_nodes) {
+            vector<const Node*> adj_nodes = test_graph.GetAdjacentNodes(graph_node);
+            if(adj_nodes.size() != 1) {
+                for(size_t expected_index = 0; expected_index < adj_nodes.size(); expected_index++) {
+                    REQUIRE(expected_values[expected_index] == adj_nodes.at(expected_index)->GetValue());
+                }
+            }
+        }
+    }
+
+    SECTION("Test One Sided Edge") {
+        test_graph.AddEdge(&test_node1, &test_node2, true);
+        vector<Node> graph_nodes = test_graph.GetNodes();
+        vector<const Node*> node_one_edges = test_graph.GetAdjacentNodes(graph_nodes[0]);
+        vector<const Node*> node_two_edges = test_graph.GetAdjacentNodes(graph_nodes[1]);
+
+        REQUIRE(node_one_edges.size() == 1);
+        REQUIRE(node_two_edges.empty());
+
+        REQUIRE(node_one_edges.at(0)->GetValue() == 20);
+    }
+
+    SECTION("Test Two Sided Edge") {
+        test_graph.AddEdge(&test_node1, &test_node2, false);
+        vector<Node> graph_nodes = test_graph.GetNodes();
+        vector<const Node*> node_one_edges = test_graph.GetAdjacentNodes(graph_nodes[0]);
+        vector<const Node*> node_two_edges = test_graph.GetAdjacentNodes(graph_nodes[1]);
+
+        REQUIRE(node_one_edges.size() == 1);
+        REQUIRE(node_two_edges.size() == 1);
+
+        REQUIRE(node_one_edges.at(0)->GetValue() == 20);
+        REQUIRE(node_two_edges.at(0)->GetValue() == 10);
+    }
+}
+
+TEST_CASE("Test Deleting a Node") {
+    Node test_node1(10, vec2(0,0));
+    Node test_node2(20, vec2(1,1));
+    Node test_node3(30, vec2(2, 2));
+    Node test_node4(40, vec2(3, 3));
+    Node test_node5(50, vec2(4, 4));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    SECTION("Erase from the list of nodes") {
+        test_graph.DeleteNode(test_node3);
+
+        vector<Node> graph_nodes = test_graph.GetNodes();
+        REQUIRE(graph_nodes.size() == 4);
+
+        for(size_t index = 0; index < test_graph.size(); index++) {
+            REQUIRE(graph_nodes[index].GetValue() != 30);
+        }
+    }
+
+    SECTION("Erases node from adjacency list") {
+        REQUIRE(test_graph.size() == 5);
+        test_graph.AddEdge(&test_node1, &test_node2, false);
+        test_graph.AddEdge(&test_node1, &test_node3, false);
+        test_graph.AddEdge(&test_node1, &test_node4, false);
+        test_graph.AddEdge(&test_node1, &test_node5, false);
+
+        REQUIRE(test_graph.DeleteNode(test_node1));
+        REQUIRE(test_graph.size() == 4);
+
+        vector<Node> graph_nodes = test_graph.GetNodes();
+        for(auto & graph_node : graph_nodes) {
+            REQUIRE(test_graph.GetAdjacentNodes(graph_node).empty());
+        }
+    }
+
+    SECTION("Node does not exist") {
+        Node to_delete(60, vec2(35,35));
+        REQUIRE_FALSE(test_graph.DeleteNode(to_delete));
+    }
+}
+
+TEST_CASE("Test Deleting an Edge") {
+    Node test_node1(10, vec2(0,0));
+    Node test_node2(20, vec2(1,1));
+    Node test_node3(30, vec2(2, 2));
+    Node test_node4(40, vec2(3, 3));
+    Node test_node5(50, vec2(4, 4));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    test_graph.AddEdge(&test_node1, &test_node2, false);
+    test_graph.AddEdge(&test_node1, &test_node3, false);
+    test_graph.AddEdge(&test_node1, &test_node4, false);
+    test_graph.AddEdge(&test_node1, &test_node5, false);
+    test_graph.AddEdge(&test_node3, &test_node4, false);
+    test_graph.AddEdge(&test_node3, &test_node5, false);
+
+    vector<Node> graph_nodes = test_graph.GetNodes();
+
+    SECTION("Test Proper Edge Adding") {
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[0]).size() == 4);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[1]).size() == 1);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[2]).size() == 3);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[3]).size() == 2);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[4]).size() == 2);
+    }
+
+    SECTION("Test Proper Edge Deleting") {
+        test_graph.DeleteEdge(&test_node1, &test_node2, false);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[0]).size() == 3);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[1]).empty());
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[2]).size() == 3);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[3]).size() == 2);
+        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[4]).size() == 2);
+    }
+}
+
 TEST_CASE("Test Setting a New Location") {
     Graph test_graph;
     Node test_node1(0, vec2(1,1));
@@ -58,72 +204,14 @@ TEST_CASE("Test Setting a New Value") {
     test_graph.SetValue(test_node2, 15);
     
     vector<Node> graph_nodes = test_graph.GetNodes();
-    for(size_t index = 0; index < graph_nodes.size(); index++) {
-        if(graph_nodes[index].GetValue() != 0) {
-            REQUIRE(graph_nodes[index] == 15);
+    for(auto & graph_node : graph_nodes) {
+        if(graph_node.GetValue() != 0) {
+            REQUIRE(graph_node.GetValue() == 15);
         }
     }
 }
 
-TEST_CASE("Test AddEdge") {
-    Node test_node1(10, vec2(0,0));
-    Node test_node2(20, vec2(1,1));
-    Node test_node3(30, vec2(2, 2));
-    Node test_node4(40, vec2(3, 3));
-    Node test_node5(50, vec2(4, 4));
-
-    Graph test_graph;
-    test_graph.AddNode(test_node1);
-    test_graph.AddNode(test_node2);
-    test_graph.AddNode(test_node3);
-    test_graph.AddNode(test_node4);
-    test_graph.AddNode(test_node5);
-    
-    SECTION("Test Multiple Edges") {
-        test_graph.AddEdge(&test_node1, &test_node2, false);
-        test_graph.AddEdge(&test_node1, &test_node3, false);
-        test_graph.AddEdge(&test_node1, &test_node4, false);
-        test_graph.AddEdge(&test_node1, &test_node5, false);
-
-        int expected_values[4]  = {20,30,40,50};
-        vector<Node> graph_nodes = test_graph.GetNodes();
-        for(auto & graph_node : graph_nodes) {
-            vector<const Node*> adj_nodes = test_graph.GetAdjacentNodes(graph_node);
-            if(adj_nodes.size() != 1) {
-                for(size_t expected_index = 0; expected_index < adj_nodes.size(); expected_index++) {
-                    REQUIRE(expected_values[expected_index] == adj_nodes.at(expected_index)->GetValue());
-                }
-            }
-        }
-    }
-    
-    SECTION("Test One Sided Edge") {
-        test_graph.AddEdge(&test_node1, &test_node2, true);
-        vector<Node> graph_nodes = test_graph.GetNodes();
-        vector<const Node*> node_one_edges = test_graph.GetAdjacentNodes(graph_nodes[0]);
-        vector<const Node*> node_two_edges = test_graph.GetAdjacentNodes(graph_nodes[1]);
-        
-        REQUIRE(node_one_edges.size() == 1);
-        REQUIRE(node_two_edges.empty());
-        
-        REQUIRE(node_one_edges.at(0)->GetValue() == 20);
-    }
-
-    SECTION("Test Two Sided Edge") {
-        test_graph.AddEdge(&test_node1, &test_node2, false);
-        vector<Node> graph_nodes = test_graph.GetNodes();
-        vector<const Node*> node_one_edges = test_graph.GetAdjacentNodes(graph_nodes[0]);
-        vector<const Node*> node_two_edges = test_graph.GetAdjacentNodes(graph_nodes[1]);
-
-        REQUIRE(node_one_edges.size() == 1);
-        REQUIRE(node_two_edges.size() == 1);
-
-        REQUIRE(node_one_edges.at(0)->GetValue() == 20);
-        REQUIRE(node_two_edges.at(0)->GetValue() == 10);
-    }
-}
-
-TEST_CASE("Test Deleting a Node") {
+TEST_CASE("Test Node Exists") {
     Node test_node1(10, vec2(0,0));
     Node test_node2(20, vec2(1,1));
     Node test_node3(30, vec2(2, 2));
@@ -137,40 +225,24 @@ TEST_CASE("Test Deleting a Node") {
     test_graph.AddNode(test_node4);
     test_graph.AddNode(test_node5);
 
-    SECTION("Erase from the list of nodes") {
-        test_graph.DeleteNode(test_node3);
-        
-        vector<Node> graph_nodes = test_graph.GetNodes();
-        REQUIRE(graph_nodes.size() == 4);
-        
-        for(size_t index = 0; index < test_graph.size(); index++) {
-            REQUIRE(graph_nodes[index].GetValue() != 30);
-        }
+    SECTION("Node with non-matching parameters") {
+        REQUIRE_FALSE(test_graph.NodeExists(Node(14, vec2(15,16))));
     }
     
-    SECTION("Erases node from adjacency list") {
-        REQUIRE(test_graph.size() == 5);
-        test_graph.AddEdge(&test_node1, &test_node2, false);
-        test_graph.AddEdge(&test_node1, &test_node3, false);
-        test_graph.AddEdge(&test_node1, &test_node4, false);
-        test_graph.AddEdge(&test_node1, &test_node5, false);
+    SECTION("Node with non-matching value") {
+        REQUIRE_FALSE(test_graph.NodeExists(Node(12, vec2(0,0))));
+    }
 
-        REQUIRE(test_graph.DeleteNode(test_node1));
-        REQUIRE(test_graph.size() == 4);
-
-        vector<Node> graph_nodes = test_graph.GetNodes();
-        for(auto & graph_node : graph_nodes) {
-            REQUIRE(test_graph.GetAdjacentNodes(graph_node).empty());
-        }
+    SECTION("Node with non-matching location") {
+        REQUIRE_FALSE(test_graph.NodeExists(Node(10, vec2(15,16))));
     }
     
-    SECTION("Node does not exist") {
-        Node to_delete(60, vec2(35,35));
-        REQUIRE_FALSE(test_graph.DeleteNode(to_delete));
+    SECTION("Node exists") {
+        REQUIRE(test_graph.NodeExists(Node(10, vec2(0,0))));
     }
 }
 
-TEST_CASE("Test Deleting an Edge") {
+TEST_CASE("Test Edge Exists") {
     Node test_node1(10, vec2(0,0));
     Node test_node2(20, vec2(1,1));
     Node test_node3(30, vec2(2, 2));
@@ -188,26 +260,72 @@ TEST_CASE("Test Deleting an Edge") {
     test_graph.AddEdge(&test_node1, &test_node3, false);
     test_graph.AddEdge(&test_node1, &test_node4, false);
     test_graph.AddEdge(&test_node1, &test_node5, false);
-    test_graph.AddEdge(&test_node3, &test_node4, false);
-    test_graph.AddEdge(&test_node3, &test_node5, false);
     
-    vector<Node> graph_nodes = test_graph.GetNodes();
+    SECTION("Edge exists") {
+        REQUIRE(test_graph.EdgeExists(test_node1, test_node2));
+    }
     
-    SECTION("Test Proper Edge Adding") {
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[0]).size() == 4);
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[1]).size() == 1);
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[2]).size() == 3);
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[3]).size() == 2);
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[4]).size() == 2);
+    SECTION("Edge doesn't exist") {
+        REQUIRE_FALSE(test_graph.EdgeExists(test_node2, test_node3));
+    }
+    
+    SECTION("Edge doesn't exist when single node doesn't exist") {
+        REQUIRE_FALSE(test_graph.EdgeExists(test_node2, Node(12, vec2(12,12))));
+        REQUIRE_FALSE(test_graph.EdgeExists(Node(12, vec2(12,12)), test_node2));
+        REQUIRE_FALSE(test_graph.EdgeExists(Node(12, vec2(12,12)),Node(12, vec2(12,12))));
+    }
+}
+
+TEST_CASE("Test Size") {
+    Node test_node1(10, vec2(0,0));
+    Node test_node2(20, vec2(1,1));
+    Node test_node3(30, vec2(2, 2));
+    Node test_node4(40, vec2(3, 3));
+    Node test_node5(50, vec2(4, 4));
+
+    Graph test_graph;
+    SECTION("Graph changes size on adding") {
+        test_graph.AddNode(test_node1);
+        REQUIRE(test_graph.size() == 1);
+        test_graph.AddNode(test_node2);
+        REQUIRE(test_graph.size() == 2);
+        test_graph.AddNode(test_node3);
+        REQUIRE(test_graph.size() == 3);
     }
 
-    SECTION("Test Proper Edge Deleting") {
-        test_graph.DeleteEdge(&test_node1, &test_node2, false);
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[0]).size() == 3);
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[1]).size() == 0);
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[2]).size() == 3);
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[3]).size() == 2);
-        REQUIRE(test_graph.GetAdjacentNodes(graph_nodes[4]).size() == 2);
+    SECTION("Graph changes size on deleting") {
+        test_graph.AddNode(test_node1);
+        test_graph.AddNode(test_node2);
+        test_graph.AddNode(test_node3);
+        test_graph.AddNode(test_node4);
+        test_graph.AddNode(test_node5);
+        REQUIRE(test_graph.size() == 5);
+
+        test_graph.DeleteNode(test_node1);
+        REQUIRE(test_graph.size() == 4);
+        test_graph.DeleteNode(test_node2);
+        REQUIRE(test_graph.size() == 3);
+        test_graph.DeleteNode(test_node3);
+        REQUIRE(test_graph.size() == 2);
+    }
+}
+
+TEST_CASE("Test Empty") {
+    Node test_node1(10, vec2(0,0));
+    Node test_node2(20, vec2(1,1));
+    Node test_node3(30, vec2(2, 2));
+    Node test_node4(40, vec2(3, 3));
+    Node test_node5(50, vec2(4, 4));
+
+    Graph test_graph;
+
+    SECTION("Graph is empty") {
+        REQUIRE(test_graph.empty());
+    }
+
+    SECTION("Graph is not-empty") {
+        test_graph.AddNode(test_node1);
+        REQUIRE_FALSE(test_graph.empty());
     }
 }
 
@@ -229,8 +347,6 @@ TEST_CASE("Test Clearing Map") {
     
     test_graph.clear();
 
-    REQUIRE(test_graph.size() == 0);
+    REQUIRE(test_graph.empty());
     REQUIRE(test_graph.GetNodes().empty());
 }
-
-

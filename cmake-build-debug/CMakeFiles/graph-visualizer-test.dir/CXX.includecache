@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+../include/core/edge.h
+node.h
+../include/core/node.h
+
+../include/core/graph.h
+node.h
+../include/core/node.h
+edge.h
+../include/core/edge.h
+vector
+-
+
 ../include/core/node.h
 glm/vec2.hpp
 -
@@ -7816,10 +7828,12 @@ C:/Users/rryrr/CLionProjects/Cinder/include/glm/detail/setup.hpp
 detail/func_vector_relational.inl
 C:/Users/rryrr/CLionProjects/Cinder/include/glm/detail/func_vector_relational.inl
 
-C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/node_test.cpp
+C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/graph_test.cpp
 catch2/catch.hpp
 -
 core/node.h
+-
+core/graph.h
 -
 
 _deps/catch2-src/single_include/catch2/catch.hpp
