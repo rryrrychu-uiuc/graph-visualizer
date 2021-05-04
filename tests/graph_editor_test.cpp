@@ -77,7 +77,7 @@ TEST_CASE("Test CreateEdge") {
     }
     
     SECTION("Edge already exists") {
-        test_graph.AddEdge(&test_node1, &test_node2, false);
+        test_graph.AddEdge(test_node1, test_node2, false);
         test_editor.CreateEdge(&test_graph, vec2(210, 210));
         REQUIRE_FALSE(test_editor.empty());
         REQUIRE(test_editor.GetVectorValues().find("10") != std::string::npos);
@@ -96,8 +96,8 @@ TEST_CASE("Test CreateEdge") {
         REQUIRE(test_editor.empty());
         REQUIRE(test_graph.GetAdjacentNodes(test_node1).size() == 1);
         REQUIRE(test_graph.GetAdjacentNodes(test_node2).size() == 1);
-        REQUIRE(test_graph.GetAdjacentNodes(test_node1).at(0)->GetValue() == 20);
-        REQUIRE(test_graph.GetAdjacentNodes(test_node2).at(0)->GetValue() == 10);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).at(0).GetEndNode()->GetValue() == 20);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).at(0).GetEndNode()->GetValue() == 10);
     }
 }
 
@@ -183,11 +183,11 @@ TEST_CASE("Test DeleteEdge") {
     }
 
     SECTION("Successful edge deletion") {
-        test_graph.AddEdge(&test_node1, &test_node2, false);
+        test_graph.AddEdge(test_node1, test_node2, false);
         REQUIRE(test_graph.GetAdjacentNodes(test_node1).size() == 1);
         REQUIRE(test_graph.GetAdjacentNodes(test_node2).size() == 1);
-        REQUIRE(test_graph.GetAdjacentNodes(test_node1).at(0)->GetValue() == 20);
-        REQUIRE(test_graph.GetAdjacentNodes(test_node2).at(0)->GetValue() == 10);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node1).at(0).GetEndNode()->GetValue() == 20);
+        REQUIRE(test_graph.GetAdjacentNodes(test_node2).at(0).GetEndNode()->GetValue() == 10);
         test_editor.DeleteEdge(&test_graph, vec2(200,200));
         test_editor.DeleteEdge(&test_graph, vec2(300,300));
         REQUIRE(test_editor.empty());

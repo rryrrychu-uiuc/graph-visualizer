@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graph-visualizer.dir/src/visualizer/graph_editor.cpp.obj"
   "CMakeFiles/graph-visualizer.dir/src/visualizer/graph_manipulator_app.cpp.obj"
   "CMakeFiles/graph-visualizer.dir/src/visualizer/graph_view.cpp.obj"
+  "CMakeFiles/graph-visualizer.dir/src/visualizer/shortest_path_algorithms.cpp.obj"
   "Debug/graph-visualizer/graph-visualizer.exe"
   "Debug/graph-visualizer/graph-visualizer.exe.manifest"
   "Debug/graph-visualizer/graph-visualizer.pdb"

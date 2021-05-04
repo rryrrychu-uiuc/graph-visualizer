@@ -25,7 +25,7 @@ namespace graph {
         /**
         * Returns list of references to the nodes in the graph
         */
-        vector<const Node *> GetAdjacentNodes(const Node& target_node);
+        vector<Edge> GetAdjacentNodes(const Node& target_node);
 
         /**
          * Add a node to the graph 
@@ -38,7 +38,7 @@ namespace graph {
          * @param end_node node to be added
          * @param single_direction false if both nodes should be added to each other's adjacency list
          */
-        void AddEdge(Node *start_node, Node *end_node, bool single_direction);
+        void AddEdge(Node start_node, Node end_node, bool single_direction);
 
         /**
          * Delete a node an all existences of edges from graph (including adjacencies)
@@ -50,7 +50,7 @@ namespace graph {
         * Delete an edge between two nodes (including adjacencies)
         * @return true if the node is successfully deleted
         */
-        void DeleteEdge(Node *start_node, Node *end_node, bool single_direction);
+        void DeleteEdge(const Node *start_node, const Node *end_node, bool single_direction);
 
         /**
          * Changes the location of a node
@@ -97,8 +97,11 @@ namespace graph {
         size_t size() const;
 
     private:
-        map<Node, vector<const Node *>> graph_mappings_;
+        map<Node, vector<Edge>> graph_mappings_;
         size_t map_size;
+        
+        //delete edge from adjacency list
+        void DeleteNodeFromEdges(const Node *start_node, const Node *end_node);
     };
 }
 

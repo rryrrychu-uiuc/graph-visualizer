@@ -35,46 +35,46 @@ TEST_CASE("Test Adding Edge to Graph") {
     test_graph.AddNode(test_node5);
 
     SECTION("Test Multiple Edges") {
-        test_graph.AddEdge(&test_node1, &test_node2, false);
-        test_graph.AddEdge(&test_node1, &test_node3, false);
-        test_graph.AddEdge(&test_node1, &test_node4, false);
-        test_graph.AddEdge(&test_node1, &test_node5, false);
+        test_graph.AddEdge(test_node1, test_node2, false);
+        test_graph.AddEdge(test_node1, test_node3, false);
+        test_graph.AddEdge(test_node1, test_node4, false);
+        test_graph.AddEdge(test_node1, test_node5, false);
 
         int expected_values[4]  = {20,30,40,50};
         vector<Node> graph_nodes = test_graph.GetNodes();
         for(auto & graph_node : graph_nodes) {
-            vector<const Node*> adj_nodes = test_graph.GetAdjacentNodes(graph_node);
+            vector<Edge> adj_nodes = test_graph.GetAdjacentNodes(graph_node);
             if(adj_nodes.size() != 1) {
                 for(size_t expected_index = 0; expected_index < adj_nodes.size(); expected_index++) {
-                    REQUIRE(expected_values[expected_index] == adj_nodes.at(expected_index)->GetValue());
+                    REQUIRE(expected_values[expected_index] == adj_nodes.at(expected_index).GetEndNode()->GetValue());
                 }
             }
         }
     }
 
     SECTION("Test One Sided Edge") {
-        test_graph.AddEdge(&test_node1, &test_node2, true);
+        test_graph.AddEdge(test_node1, test_node2, true);
         vector<Node> graph_nodes = test_graph.GetNodes();
-        vector<const Node*> node_one_edges = test_graph.GetAdjacentNodes(graph_nodes[0]);
-        vector<const Node*> node_two_edges = test_graph.GetAdjacentNodes(graph_nodes[1]);
+        vector<Edge> node_one_edges = test_graph.GetAdjacentNodes(graph_nodes[0]);
+        vector<Edge> node_two_edges = test_graph.GetAdjacentNodes(graph_nodes[1]);
 
         REQUIRE(node_one_edges.size() == 1);
         REQUIRE(node_two_edges.empty());
 
-        REQUIRE(node_one_edges.at(0)->GetValue() == 20);
+        REQUIRE(node_one_edges.at(0).GetEndNode()->GetValue() == 20);
     }
 
     SECTION("Test Two Sided Edge") {
-        test_graph.AddEdge(&test_node1, &test_node2, false);
+        test_graph.AddEdge(test_node1, test_node2, false);
         vector<Node> graph_nodes = test_graph.GetNodes();
-        vector<const Node*> node_one_edges = test_graph.GetAdjacentNodes(graph_nodes[0]);
-        vector<const Node*> node_two_edges = test_graph.GetAdjacentNodes(graph_nodes[1]);
+        vector<Edge> node_one_edges = test_graph.GetAdjacentNodes(graph_nodes[0]);
+        vector<Edge> node_two_edges = test_graph.GetAdjacentNodes(graph_nodes[1]);
 
         REQUIRE(node_one_edges.size() == 1);
         REQUIRE(node_two_edges.size() == 1);
 
-        REQUIRE(node_one_edges.at(0)->GetValue() == 20);
-        REQUIRE(node_two_edges.at(0)->GetValue() == 10);
+        REQUIRE(node_one_edges.at(0).GetEndNode()->GetValue() == 20);
+        REQUIRE(node_two_edges.at(0).GetEndNode()->GetValue() == 10);
     }
 }
 
@@ -105,10 +105,10 @@ TEST_CASE("Test Deleting a Node") {
 
     SECTION("Erases node from adjacency list") {
         REQUIRE(test_graph.size() == 5);
-        test_graph.AddEdge(&test_node1, &test_node2, false);
-        test_graph.AddEdge(&test_node1, &test_node3, false);
-        test_graph.AddEdge(&test_node1, &test_node4, false);
-        test_graph.AddEdge(&test_node1, &test_node5, false);
+        test_graph.AddEdge(test_node1, test_node2, false);
+        test_graph.AddEdge(test_node1, test_node3, false);
+        test_graph.AddEdge(test_node1, test_node4, false);
+        test_graph.AddEdge(test_node1, test_node5, false);
 
         REQUIRE(test_graph.DeleteNode(test_node1));
         REQUIRE(test_graph.size() == 4);
@@ -139,12 +139,12 @@ TEST_CASE("Test Deleting an Edge") {
     test_graph.AddNode(test_node4);
     test_graph.AddNode(test_node5);
 
-    test_graph.AddEdge(&test_node1, &test_node2, false);
-    test_graph.AddEdge(&test_node1, &test_node3, false);
-    test_graph.AddEdge(&test_node1, &test_node4, false);
-    test_graph.AddEdge(&test_node1, &test_node5, false);
-    test_graph.AddEdge(&test_node3, &test_node4, false);
-    test_graph.AddEdge(&test_node3, &test_node5, false);
+    test_graph.AddEdge(test_node1, test_node2, false);
+    test_graph.AddEdge(test_node1, test_node3, false);
+    test_graph.AddEdge(test_node1, test_node4, false);
+    test_graph.AddEdge(test_node1, test_node5, false);
+    test_graph.AddEdge(test_node3, test_node4, false);
+    test_graph.AddEdge(test_node3, test_node5, false);
 
     vector<Node> graph_nodes = test_graph.GetNodes();
 
@@ -256,10 +256,10 @@ TEST_CASE("Test Edge Exists") {
     test_graph.AddNode(test_node4);
     test_graph.AddNode(test_node5);
     
-    test_graph.AddEdge(&test_node1, &test_node2, false);
-    test_graph.AddEdge(&test_node1, &test_node3, false);
-    test_graph.AddEdge(&test_node1, &test_node4, false);
-    test_graph.AddEdge(&test_node1, &test_node5, false);
+    test_graph.AddEdge(test_node1, test_node2, false);
+    test_graph.AddEdge(test_node1, test_node3, false);
+    test_graph.AddEdge(test_node1, test_node4, false);
+    test_graph.AddEdge(test_node1, test_node5, false);
     
     SECTION("Edge exists") {
         REQUIRE(test_graph.EdgeExists(test_node1, test_node2));

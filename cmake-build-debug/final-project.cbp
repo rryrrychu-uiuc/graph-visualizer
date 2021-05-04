@@ -199,6 +199,10 @@
 			<Option target="graph-visualizer"/>
 			<Option target="graph-visualizer-test"/>
 		</Unit>
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/src/visualizer/shortest_path_algorithms.cpp">
+			<Option target="graph-visualizer"/>
+			<Option target="graph-visualizer-test"/>
+		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/edge_test.cpp">
 			<Option target="graph-visualizer-test"/>
 		</Unit>
@@ -212,6 +216,9 @@
 			<Option target="graph-visualizer-test"/>
 		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/node_test.cpp">
+			<Option target="graph-visualizer-test"/>
+		</Unit>
+		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/shortest_path_test.cpp">
 			<Option target="graph-visualizer-test"/>
 		</Unit>
 		<Unit filename="C:/Users/rryrr/CLionProjects/Cinder/my-projects/final-project-rryrrychu-uiuc/tests/test_main.cc">

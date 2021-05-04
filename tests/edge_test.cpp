@@ -11,7 +11,7 @@ TEST_CASE("Two Constructor Test") {
     SECTION("Proper Assignment") {
         REQUIRE(test_edge.GetStartNode()->GetValue() == 12);
         REQUIRE(test_edge.GetEndNode()->GetValue() == 13);
-        REQUIRE_FALSE(test_edge.IsTwoSided());
+        REQUIRE(test_edge.IsTwoSided());
     }
 
     SECTION("Changing Initial Nodes") {
@@ -22,8 +22,10 @@ TEST_CASE("Two Constructor Test") {
     }
 
     SECTION("Changing From Nodes From Reference") {
-        test_edge.GetStartNode()->SetValue(45);
-        test_edge.GetEndNode()->SetValue(15);
+        Node *start_node = const_cast<Node *>(test_edge.GetStartNode());
+        Node *end_node = const_cast<Node *>(test_edge.GetEndNode());
+        start_node->SetValue(45);
+        end_node->SetValue(15);
         REQUIRE(test_edge.GetStartNode()->GetValue() == 45);
         REQUIRE(test_edge.GetEndNode()->GetValue() == 15);
     }
@@ -49,8 +51,10 @@ TEST_CASE("Three Constructor Test") {
     }
 
     SECTION("Changing From Nodes From Reference") {
-        test_edge.GetStartNode()->SetValue(45);
-        test_edge.GetEndNode()->SetValue(15);
+        Node *start_node = const_cast<Node *>(test_edge.GetStartNode());
+        Node *end_node = const_cast<Node *>(test_edge.GetEndNode());
+        start_node->SetValue(45);
+        end_node->SetValue(15);
         REQUIRE(test_edge.GetStartNode()->GetValue() == 45);
         REQUIRE(test_edge.GetEndNode()->GetValue() == 15);
     }

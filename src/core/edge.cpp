@@ -1,9 +1,9 @@
 #include "core/edge.h"
 
-Edge::Edge(Node *start_node, Node *end_node) : start_(start_node), end_(end_node), is_two_sided_(false),
+Edge::Edge(const Node *start_node, const Node *end_node) : start_(start_node), end_(end_node), is_two_sided_(true),
                                                edge_color_(ci::Color("blue")), weight_(-1) {}
 
-Edge::Edge(Node *start_node, Node *end_node, bool is_two_sided) : start_(start_node), end_(end_node),
+Edge::Edge(const Node *start_node, const Node *end_node, bool is_two_sided) : start_(start_node), end_(end_node),
                                                                   is_two_sided_(is_two_sided),
                                                                   edge_color_(ci::Color("blue")), weight_(-1) {}
 
@@ -11,11 +11,11 @@ bool Edge::IsTwoSided() const {
     return is_two_sided_;
 }
 
-Node *Edge::GetStartNode() {
+const Node* Edge::GetStartNode() {
     return start_;
 }
 
-Node *Edge::GetEndNode() {
+const Node* Edge::GetEndNode() {
     return end_;
 }
 
@@ -27,11 +27,11 @@ ci::Color Edge::GetEdgeColor() {
     return edge_color_;
 }
 
-void Edge::SetStartNode(Node *start_node) {
+void Edge::SetStartNode(const Node *start_node) {
     start_ = start_node;
 }
 
-void Edge::SetEndNode(Node *end_node) {
+void Edge::SetEndNode(const Node *end_node) {
     end_ = end_node;
 }
 

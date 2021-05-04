@@ -55,7 +55,7 @@ void GraphView::DrawEdges(Graph visualized_graph) {
         for (auto &adjacent_node : visualized_graph.GetAdjacentNodes(current_node)) {
             ci::gl::color(ci::Color("blue"));
             ci::gl::lineWidth(5);
-            ci::gl::drawLine(current_node.GetLocation(), adjacent_node->GetLocation());
+            ci::gl::drawLine(current_node.GetLocation(), adjacent_node.GetEndNode()->GetLocation());
         }
     }
 }

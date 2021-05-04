@@ -87,17 +87,17 @@ namespace graph {
             visualized_graph.AddNode(n6);
             visualized_graph.AddNode(n7);
 
-            visualized_graph.AddEdge(&n1, &n2, false);
-            visualized_graph.AddEdge(&n1, &n3, false);
-            visualized_graph.AddEdge(&n1, &n4, false);
-            visualized_graph.AddEdge(&n1, &n6, false);
-            visualized_graph.AddEdge(&n2, &n3, false);
-            visualized_graph.AddEdge(&n2, &n5, false);
-            visualized_graph.AddEdge(&n2, &n7, false);
-            visualized_graph.AddEdge(&n2, &n6, false);
-            visualized_graph.AddEdge(&n3, &n4, false);
-            visualized_graph.AddEdge(&n3, &n5, false);
-            visualized_graph.AddEdge(&n6, &n7, false);
+            visualized_graph.AddEdge(n1, n2, false);
+            visualized_graph.AddEdge(n1, n3, false);
+            visualized_graph.AddEdge(n1, n4, false);
+            visualized_graph.AddEdge(n1, n6, false);
+            visualized_graph.AddEdge(n2, n3, false);
+            visualized_graph.AddEdge(n2, n5, false);
+            visualized_graph.AddEdge(n2, n7, false);
+            visualized_graph.AddEdge(n2, n6, false);
+            visualized_graph.AddEdge(n3, n4, false);
+            visualized_graph.AddEdge(n3, n5, false);
+            visualized_graph.AddEdge(n6, n7, false);
         }
 
         void GraphVisualizerApp::WriteCommandInstructions() const {

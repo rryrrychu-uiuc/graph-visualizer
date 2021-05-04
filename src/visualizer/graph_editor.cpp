@@ -39,7 +39,7 @@ void GraphEditor::CreateEdge(Graph *target_graph, vec2 location) {
         nodes_to_bridge.push_back(target_node);
     } else {
         if (!target_graph->EdgeExists(nodes_to_bridge[0], target_node)) {
-            target_graph->AddEdge(&nodes_to_bridge[0], &target_node, false);
+            target_graph->AddEdge(nodes_to_bridge[0], target_node, false);
         }
         nodes_to_bridge.clear();
     }

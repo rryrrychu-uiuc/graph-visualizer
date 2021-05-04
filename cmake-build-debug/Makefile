@@ -359,6 +359,36 @@ src\visualizer\graph_view.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_view.cpp.s
 .PHONY : src\visualizer\graph_view.cpp.s
 
+src\visualizer\shortest_path_algorithms.obj: src\visualizer\shortest_path_algorithms.cpp.obj
+
+.PHONY : src\visualizer\shortest_path_algorithms.obj
+
+# target to build an object file
+src\visualizer\shortest_path_algorithms.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\shortest_path_algorithms.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\shortest_path_algorithms.cpp.obj
+.PHONY : src\visualizer\shortest_path_algorithms.cpp.obj
+
+src\visualizer\shortest_path_algorithms.i: src\visualizer\shortest_path_algorithms.cpp.i
+
+.PHONY : src\visualizer\shortest_path_algorithms.i
+
+# target to preprocess a source file
+src\visualizer\shortest_path_algorithms.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\shortest_path_algorithms.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\shortest_path_algorithms.cpp.i
+.PHONY : src\visualizer\shortest_path_algorithms.cpp.i
+
+src\visualizer\shortest_path_algorithms.s: src\visualizer\shortest_path_algorithms.cpp.s
+
+.PHONY : src\visualizer\shortest_path_algorithms.s
+
+# target to generate assembly for a file
+src\visualizer\shortest_path_algorithms.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer.dir\src\visualizer\shortest_path_algorithms.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\src\visualizer\shortest_path_algorithms.cpp.s
+.PHONY : src\visualizer\shortest_path_algorithms.cpp.s
+
 tests\edge_test.obj: tests\edge_test.cpp.obj
 
 .PHONY : tests\edge_test.obj
@@ -494,6 +524,33 @@ tests\node_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\node_test.cpp.s
 .PHONY : tests\node_test.cpp.s
 
+tests\shortest_path_test.obj: tests\shortest_path_test.cpp.obj
+
+.PHONY : tests\shortest_path_test.obj
+
+# target to build an object file
+tests\shortest_path_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\shortest_path_test.cpp.obj
+.PHONY : tests\shortest_path_test.cpp.obj
+
+tests\shortest_path_test.i: tests\shortest_path_test.cpp.i
+
+.PHONY : tests\shortest_path_test.i
+
+# target to preprocess a source file
+tests\shortest_path_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\shortest_path_test.cpp.i
+.PHONY : tests\shortest_path_test.cpp.i
+
+tests\shortest_path_test.s: tests\shortest_path_test.cpp.s
+
+.PHONY : tests\shortest_path_test.s
+
+# target to generate assembly for a file
+tests\shortest_path_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph-visualizer-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph-visualizer-test.dir\tests\shortest_path_test.cpp.s
+.PHONY : tests\shortest_path_test.cpp.s
+
 tests\test_main.obj: tests\test_main.cc.obj
 
 .PHONY : tests\test_main.obj
@@ -553,6 +610,9 @@ help:
 	@echo ... src/visualizer/graph_view.obj
 	@echo ... src/visualizer/graph_view.i
 	@echo ... src/visualizer/graph_view.s
+	@echo ... src/visualizer/shortest_path_algorithms.obj
+	@echo ... src/visualizer/shortest_path_algorithms.i
+	@echo ... src/visualizer/shortest_path_algorithms.s
 	@echo ... tests/edge_test.obj
 	@echo ... tests/edge_test.i
 	@echo ... tests/edge_test.s
@@ -568,6 +628,9 @@ help:
 	@echo ... tests/node_test.obj
 	@echo ... tests/node_test.i
 	@echo ... tests/node_test.s
+	@echo ... tests/shortest_path_test.obj
+	@echo ... tests/shortest_path_test.i
+	@echo ... tests/shortest_path_test.s
 	@echo ... tests/test_main.obj
 	@echo ... tests/test_main.i
 	@echo ... tests/test_main.s
