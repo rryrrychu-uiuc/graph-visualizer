@@ -43,7 +43,7 @@ bool GraphView::TouchesOtherNodes(Graph *visualized_graph, Node current_node, ve
 
 void GraphView::DrawNodes(Graph visualized_graph) {
     for (auto &target_node : visualized_graph.GetNodes()) {
-        ci::gl::color(kDefaultColor);
+        ci::gl::color(target_node.GetColor());
         ci::gl::drawSolidCircle(target_node.GetLocation(), kDefaultRadius);
         DrawLabel(target_node);
     }
@@ -52,10 +52,10 @@ void GraphView::DrawNodes(Graph visualized_graph) {
 void GraphView::DrawEdges(Graph visualized_graph) {
     //for every node, draw a line to the location of every adjacent nodes
     for (auto &current_node : visualized_graph.GetNodes()) {
-        for (auto &adjacent_node : visualized_graph.GetAdjacentNodes(current_node)) {
-            ci::gl::color(ci::Color("blue"));
+        for (auto &adjacent_edge : visualized_graph.GetAdjacentNodes(current_node)) {
+            ci::gl::color(adjacent_edge.GetEdgeColor());
             ci::gl::lineWidth(5);
-            ci::gl::drawLine(current_node.GetLocation(), adjacent_node.GetEndNode()->GetLocation());
+            ci::gl::drawLine(current_node.GetLocation(), adjacent_edge.GetEndNode()->GetLocation());
         }
     }
 }

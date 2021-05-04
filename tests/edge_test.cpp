@@ -60,6 +60,36 @@ TEST_CASE("Three Constructor Test") {
     }
 }
 
+TEST_CASE("Four Constructor Test") {
+    Node node_1(12);
+    Node node_2(13);
+
+    Edge test_edge(&node_1, &node_2, true, ci::Color("purple"));
+
+    SECTION("Proper Assignment") {
+        REQUIRE(test_edge.GetStartNode()->GetValue() == 12);
+        REQUIRE(test_edge.GetEndNode()->GetValue() == 13);
+        REQUIRE(test_edge.IsTwoSided() == true);
+        REQUIRE(test_edge.GetEdgeColor() == ci::Color("purple"));
+    }
+
+    SECTION("Changing Values") {
+        node_1.SetValue(45);
+        node_2.SetValue(15);
+        REQUIRE(test_edge.GetStartNode()->GetValue() == 45);
+        REQUIRE(test_edge.GetEndNode()->GetValue() == 15);
+    }
+
+    SECTION("Changing From Nodes From Reference") {
+        Node *start_node = const_cast<Node *>(test_edge.GetStartNode());
+        Node *end_node = const_cast<Node *>(test_edge.GetEndNode());
+        start_node->SetValue(45);
+        end_node->SetValue(15);
+        REQUIRE(test_edge.GetStartNode()->GetValue() == 45);
+        REQUIRE(test_edge.GetEndNode()->GetValue() == 15);
+    }
+}
+
 TEST_CASE("Changing Start Node Test") {
     Node node_1(12);
     Node node_2(13);

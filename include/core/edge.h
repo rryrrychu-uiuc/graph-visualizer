@@ -16,6 +16,11 @@ public:
     * Create an edge given two node references and the directions
     */
     Edge(const Node* start_node, const Node* end_node, bool is_two_sided);
+
+    /**
+    * Create an edge given two node references and the directions, and color
+    */
+    Edge(const Node* start_node, const Node* end_node, bool is_two_sided, ci::Color target_color);
     
     bool IsTwoSided() const;
     

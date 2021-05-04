@@ -41,6 +41,15 @@ namespace graph {
         void AddEdge(Node start_node, Node end_node, bool single_direction);
 
         /**
+         * Add adjacent node to a certain node
+         * @param start_node node to add adjacent node to 
+         * @param end_node node to be added
+         * @param new_color the color of the edge
+         * @param single_direction false if both nodes should be added to each other's adjacency list
+         */        
+        void AddEdge(Node start_node, Node end_node, ci::Color new_color, bool single_direction);
+        
+        /**
          * Delete a node an all existences of edges from graph (including adjacencies)
          * @return true if the node is successfully deleted
          */
@@ -68,6 +77,19 @@ namespace graph {
         */
         bool SetValue(const Node& target_node, int new_value);
 
+        /**
+         * Change the color of a node
+         * @param target_node the color of the node to change
+         * @param new_color the new color
+         * @return true if successfully change
+         */
+        bool SetNodeColor(const Node& target_node, ci::Color new_color);
+
+        /**
+         * Change the color of an edge between two nodes and return true if it is done successfully
+         */        
+        bool SetEdgeColor(const Node& start_node, const Node& end_node, const ci::Color new_color);
+        
         /**
          * Check if the node exists in the graph
          * @param to_check node to check

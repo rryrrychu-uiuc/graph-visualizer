@@ -37,10 +37,12 @@ void GraphEditor::CreateEdge(Graph *target_graph, vec2 location) {
 
     if (nodes_to_bridge.empty()) {
         nodes_to_bridge.push_back(target_node);
+        target_graph->SetNodeColor(target_node, ci::Color("green"));
     } else {
         if (!target_graph->EdgeExists(nodes_to_bridge[0], target_node)) {
             target_graph->AddEdge(nodes_to_bridge[0], target_node, false);
         }
+        target_graph->SetNodeColor(nodes_to_bridge[0], ci::Color("orange"));
         nodes_to_bridge.clear();
     }
 }
@@ -67,8 +69,10 @@ void GraphEditor::DeleteEdge(Graph *target_graph, vec2 location) {
 
     if (nodes_to_bridge.empty()) {
         nodes_to_bridge.push_back(target_node);
+        target_graph->SetNodeColor(target_node, ci::Color("green"));
     } else {
         target_graph->DeleteEdge(&nodes_to_bridge[0], &target_node, false);
+        target_graph->SetNodeColor(nodes_to_bridge[0], ci::Color("orange"));
         nodes_to_bridge.clear();
     }
 }

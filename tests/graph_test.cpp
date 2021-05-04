@@ -78,6 +78,36 @@ TEST_CASE("Test Adding Edge to Graph") {
     }
 }
 
+TEST_CASE("test Adding Edge with Color") {
+    Node test_node1(10, vec2(0,0));
+    Node test_node2(20, vec2(1,1));
+    Node test_node3(30, vec2(2, 2));
+    Node test_node4(40, vec2(3, 3));
+    Node test_node5(50, vec2(4, 4));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    SECTION("Test Multiple Edges") {
+        test_graph.AddEdge(test_node1, test_node2, ci::Color("red"), false);
+        test_graph.AddEdge(test_node1, test_node3, ci::Color("red"), false);
+        test_graph.AddEdge(test_node1, test_node4, ci::Color("red"), false);
+        test_graph.AddEdge(test_node1, test_node5, ci::Color("red"), false);
+
+        int expected_values[4]  = {20,30,40,50};
+        vector<Node> graph_nodes = test_graph.GetNodes();
+        for(auto & graph_node : graph_nodes) {
+            for(auto& adjacent_edge: test_graph.GetAdjacentNodes(graph_node)) {
+                REQUIRE(adjacent_edge.GetEdgeColor() == ci::Color("red"));
+            }
+        }
+    }
+}
+
 TEST_CASE("Test Deleting a Node") {
     Node test_node1(10, vec2(0,0));
     Node test_node2(20, vec2(1,1));
@@ -207,6 +237,83 @@ TEST_CASE("Test Setting a New Value") {
     for(auto & graph_node : graph_nodes) {
         if(graph_node.GetValue() != 0) {
             REQUIRE(graph_node.GetValue() == 15);
+        }
+    }
+}
+
+TEST_CASE("Test Setting a new node color") {
+    Node test_node1(10, vec2(0,0));
+    Node test_node2(20, vec2(1,1));
+    Node test_node3(30, vec2(2, 2));
+    Node test_node4(40, vec2(3, 3));
+    Node test_node5(50, vec2(4, 4));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+    
+    SECTION("Node does not exist") {
+        Node random_node(124, vec2(156,154));
+        REQUIRE_FALSE(test_graph.SetNodeColor(random_node, ci::Color("green")));
+    }
+    
+    SECTION("Node successfully changes color") {
+        for(auto& graph_node: test_graph.GetNodes()){
+            REQUIRE(graph_node.GetColor() == ci::Color("orange"));
+        }
+
+        REQUIRE(test_graph.SetNodeColor(test_node3, ci::Color("green")));
+        for(auto& graph_node: test_graph.GetNodes()){
+            if(graph_node.GetColor() != ci::Color("orange")) {
+                REQUIRE(graph_node.GetColor() == ci::Color("green"));
+            }
+        }
+    }
+}
+
+TEST_CASE("Test Setting a new edge color") {
+    Node test_node1(10, vec2(0,0));
+    Node test_node2(20, vec2(1,1));
+    Node test_node3(30, vec2(2, 2));
+    Node test_node4(40, vec2(3, 3));
+    Node test_node5(50, vec2(4, 4));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    test_graph.AddEdge(test_node1, test_node2, false);
+    test_graph.AddEdge(test_node1, test_node3, false);
+    test_graph.AddEdge(test_node1, test_node4, false);
+    test_graph.AddEdge(test_node1, test_node5, false);
+    
+    SECTION("Edge does not exist") {
+        REQUIRE_FALSE(test_graph.SetEdgeColor(test_node2, test_node3, ci::Color("yellow")));
+    }
+    
+    SECTION("Node for edge doesn't exist") {
+        Node random_node(124, vec2(156,154));
+        REQUIRE_FALSE(test_graph.SetEdgeColor(random_node, test_node3, ci::Color("yellow")));
+    }
+    
+    SECTION("Edge correctly changes color") {
+        REQUIRE(test_graph.SetEdgeColor(test_node1, test_node2, ci::Color("yellow")));
+        for(auto& adjacent_edge: test_graph.GetAdjacentNodes(test_node1)) {
+            if(adjacent_edge.GetEdgeColor() != ci::Color("blue")) {
+                REQUIRE(adjacent_edge.GetEdgeColor() == ci::Color("yellow"));
+            }
+        }
+
+        for(auto& adjacent_edge: test_graph.GetAdjacentNodes(test_node2)) {
+            if(adjacent_edge.GetEdgeColor() != ci::Color("blue")) {
+                REQUIRE(adjacent_edge.GetEdgeColor() == ci::Color("yellow"));
+            }
         }
     }
 }
