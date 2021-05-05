@@ -12,18 +12,39 @@ public:
     
     ShortestPath(Graph* target_graph, Node starting_node, Node ending_node);
     
+    /**
+     * initalize proper values to run algorithm
+     */
     void InitalizeValues(Graph* target_graph, Node starting_node, Node ending_node);
     
+    /**
+     * run one iteration of the algorithm
+     */
     bool RunSingleStepDijkstra();
-    
+
+    /**
+    * run entire algorithm
+    */
     void RunEntireAlgorithm();
     
+    /**
+     * Find the smallest distance in distances
+     */
     Node GetSmallestEdge();
     
+    /**
+     * Check if node is in visited vector
+     */
     bool IsVisited(Node target_node);
     
+    /**
+     * Get the index of the node in the graph
+     */
     int IndexOfNode(Node target_node);
     
+    /**
+     * Move a node from the unvisited vector the visited vector
+     */
     void MoveNodeToVisited(Node target_node);
     
     vector<Node> GetUnvisitedNodes();

@@ -52,14 +52,19 @@ namespace graph {
             ShortestPath path_finder_;
             Graph visualized_graph;
 
+            //create a graph
             void InitializeGraph();
 
+            //show what each command does
             void WriteCommandInstructions() const;
 
+            //show which command is selected
             void DisplayCurrentCommand() const;
             
+            //show which edges are selected
             void DisplayEdgeEditing() const;
             
+            //get normal colors for the graph
             void ResetColors();
         };
     }

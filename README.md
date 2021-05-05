@@ -1,3 +1,12 @@
-Fill this in before the final project deadline. Someone who has _no familiarity_ with your project should be able to read this and understand:
-* what your project does
-* how to set it up and run it
+Graph Manipulator App:
+All of the commands for using the app are listed at the bottom when running the graph-visualizer file.
+All commands are preformed by first clicking a key shown in the GUI and then clicking on the nodes.
+The app can do the following things to graphs:
+* Add nodes
+* Add edges
+* Delete nodes
+* Delete edges
+* Find the shortest path between two nodes
+* Visualize the shortest path between two nodes
+
+
