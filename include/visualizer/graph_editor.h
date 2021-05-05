@@ -19,15 +19,21 @@ public:
     
     void DeleteEdge(Graph *target_graph, vec2 location);
     
+    void MarkNode(Graph *target_graph, vec2 location);
+    
     Node GetNodeAtLocation(Graph *target_graph, vec2 location) const;
     
     bool NodeExistsInGraph(const Node& test_node);
     
     bool IsOutOfBounds(vec2 location) const;
     
+    vector<Node> GetNodes();
+    
     std::string GetVectorValues() const;
     
     bool empty();
+    
+    size_t size();
     
     void clear();
     

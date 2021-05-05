@@ -51,9 +51,19 @@ public:
     void DrawLabel(const Node& target_node);
 
     /**
+     * Draws weight of edge
+     */
+    void DrawEdgeLabel(Edge target_edge);
+    
+    /**
      * Check if a location is not in the bounds of the GraphView
      */
     bool IsOutOfBounds(vec2 location) const;
+    
+    /**
+     * Set target graph color to all default
+     */
+    void ResetColors(Graph* target_graph);
 
 private:
     const double kWindowSize;

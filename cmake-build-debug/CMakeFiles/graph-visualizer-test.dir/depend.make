@@ -4290,6 +4290,7 @@ CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.ob
 CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.obj: ..\include\visualizer\graph_editor.h
 CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.obj: ..\include\visualizer\graph_manipulator_app.h
 CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.obj: ..\include\visualizer\graph_view.h
+CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.obj: ..\include\visualizer\shortest_path_algorithms.h
 CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_manipulator_app.cpp.obj: ..\src\visualizer\graph_manipulator_app.cpp
 
 CMakeFiles\graph-visualizer-test.dir\src\visualizer\graph_view.cpp.obj: ..\include\core\edge.h

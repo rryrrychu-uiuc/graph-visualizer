@@ -196,6 +196,42 @@ TEST_CASE("Test DeleteEdge") {
     }
 }
 
+TEST_CASE("Test MarkNodes") {
+    Node test_node1(10, vec2(200, 200));
+    Node test_node2(20, vec2(300, 300));
+    Node test_node3(30, vec2(400, 400));
+    Node test_node4(40, vec2(500, 500));
+    Node test_node5(50, vec2(600, 600));
+
+    Graph test_graph;
+    test_graph.AddNode(test_node1);
+    test_graph.AddNode(test_node2);
+    test_graph.AddNode(test_node3);
+    test_graph.AddNode(test_node4);
+    test_graph.AddNode(test_node5);
+
+    GraphEditor test_editor(30, 1000, 150);
+    test_editor.MarkNode(&test_graph, vec2(200, 200));
+    REQUIRE(test_editor.size() == 1);
+    
+    SECTION("Can't mark same node") {
+        test_editor.MarkNode(&test_graph, vec2(200, 200));
+        REQUIRE(test_editor.size() == 1);
+    }
+
+    SECTION("Properly marks 2 nodes") {
+        test_editor.MarkNode(&test_graph, vec2(300, 300));
+        REQUIRE(test_editor.size() == 2);
+    }
+
+    SECTION("Cant mark more than 2 nodes") {
+        test_editor.MarkNode(&test_graph, vec2(300, 300));
+        test_editor.MarkNode(&test_graph, vec2(400, 400));
+        REQUIRE(test_editor.size() == 2);
+    }
+    
+}
+
 TEST_CASE("Test GetNodeAtLocation") {
     Node test_node1(10, vec2(200,200));
     Node test_node2(20, vec2(500,100));

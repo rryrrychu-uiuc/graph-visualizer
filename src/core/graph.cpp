@@ -113,10 +113,10 @@ namespace graph {
         //re-add the node with a new location
         Node to_add(target_node.GetValue(), new_location);
         AddNode(to_add);
-        
+
         //re-add all the edges to the node
         for (auto & target_edge : adjacent_edges) {
-            AddEdge(to_add, *target_edge.GetEndNode(), false);
+            AddEdge(to_add, *target_edge.GetEndNode(), target_edge.GetEdgeColor(), target_edge.GetWeight(), false);
         }
         return true;
     }
@@ -136,7 +136,7 @@ namespace graph {
 
         //re-add all the edges to the node
         for (auto & target_edge : adjacent_edges) {
-            AddEdge(to_add, *target_edge.GetEndNode(), false);
+            AddEdge(to_add, *target_edge.GetEndNode(), target_edge.GetEdgeColor(), target_edge.GetWeight(), false);
         }
         return true;
     }
@@ -156,7 +156,7 @@ namespace graph {
         
         //re-add all the edges to the node
         for (auto & target_edge : adjacent_edges) {
-            AddEdge(to_add, *target_edge.GetEndNode(), false);
+            AddEdge(to_add, *target_edge.GetEndNode(), target_edge.GetEdgeColor(), target_edge.GetWeight(), false);
         }
         return true;
     }
@@ -165,9 +165,16 @@ namespace graph {
         if(!EdgeExists(start_node, end_node)) {
            return false; 
         }
-
+        
+        int edge_weight = 0;
+        for(auto& edge: graph_mappings_.at(start_node)) {
+            if(*edge.GetEndNode() == end_node) {
+                edge_weight = edge.GetWeight();
+            }
+        }
+        
         DeleteEdge(&start_node, &end_node, false);
-        AddEdge(start_node, end_node, new_color, false);
+        AddEdge(start_node, end_node, new_color, edge_weight, false);
         return true;
     }
     

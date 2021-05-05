@@ -4,11 +4,11 @@
 namespace graph {
     namespace visualizer {
         GraphVisualizerApp::GraphVisualizerApp() :
-                graph_visualizer_(kWindowSize, kMargin),
                 kDefaultFont(ci::Font("Times New Roman", 35)),
                 kDefaultColor(ci::Color("orange")),
                 kFontColor(ci::Color("white")),
                 kDefaultRadius(30.0),
+                graph_visualizer_(kWindowSize, kMargin),
                 graph_editor_(30.0, kWindowSize, kMargin),
                 app_setting_("Move Node") {
             ci::app::setWindowSize((int) kWindowSize, (int) kWindowSize);
@@ -34,6 +34,8 @@ namespace graph {
                 graph_editor_.DeleteNode(&visualized_graph, event.getPos());
             } else if (app_setting_ == kDeleteEdgeMode) {
                 graph_editor_.DeleteEdge(&visualized_graph, event.getPos());
+            } else if(app_setting_ == kShortestPath) {
+                graph_editor_.MarkNode(&visualized_graph, event.getPos());
             }
         }
 
@@ -44,78 +46,96 @@ namespace graph {
         }
 
         void GraphVisualizerApp::keyDown(ci::app::KeyEvent event) {
-
             switch (event.getCode()) {
                 case ci::app::KeyEvent::KEY_m:
-                    app_setting_ = kMoveMode;
+                    if(app_setting_ != kInAlgorithmProcess) {
+                        graph_visualizer_.ResetColors(&visualized_graph);
+                        app_setting_ = kMoveMode;
+                    }
                     break;
 
                 case ci::app::KeyEvent::KEY_n:
-                    app_setting_ = kAddNodeMode;
+                    if(app_setting_ != kInAlgorithmProcess) {
+                        graph_visualizer_.ResetColors(&visualized_graph);
+                        app_setting_ = kAddNodeMode;
+                    }
                     break;
 
                 case ci::app::KeyEvent::KEY_d:
-                    app_setting_ = kDeleteNodeMode;
+                    if(app_setting_ != kInAlgorithmProcess) {
+                        graph_visualizer_.ResetColors(&visualized_graph);
+                        app_setting_ = kDeleteNodeMode;
+                    }
                     break;
 
                 case ci::app::KeyEvent::KEY_e:
-                    app_setting_ = kAddEdgeMode;
-                    graph_editor_.clear();
+                    if(app_setting_ != kInAlgorithmProcess) {
+                        graph_visualizer_.ResetColors(&visualized_graph);
+                        app_setting_ = kAddEdgeMode;
+                        graph_editor_.clear();
+                    }
                     break;
                     
                 case ci::app::KeyEvent::KEY_r:
-                    app_setting_ = kDeleteEdgeMode;
-                    graph_editor_.clear();
+                    if(app_setting_ != kInAlgorithmProcess) {
+                        graph_visualizer_.ResetColors(&visualized_graph);
+                        app_setting_ = kDeleteEdgeMode;
+                        graph_editor_.clear();
+                    }
                     break;
 
                 case ci::app::KeyEvent::KEY_s:
-                    app_setting_ = kShortestPath;
+                    if(app_setting_ != kInAlgorithmProcess) {
+                        graph_visualizer_.ResetColors(&visualized_graph);
+                        app_setting_ = kShortestPath;
+                        graph_editor_.clear();
+                    }
                     break;
                     
-                case ci::app::KeyEvent::KEY_KP_ENTER:
-                    if(app_setting_ == kShortestPath) {
-                        
+                case ci::app::KeyEvent::KEY_RETURN:
+                    if(app_setting_ == kShortestPath && graph_editor_.size() == 2) {
+                        app_setting_ = kInAlgorithmProcess;
+                        vector<Node> path_from = graph_editor_.GetNodes();
+                        path_finder_.InitalizeValues(&visualized_graph, path_from[0], path_from[1]);
+                        graph_editor_.clear();
+                        graph_visualizer_.ResetColors(&visualized_graph);
+                    }
+                    break;
+                    
+                //show one step of shortest path algorithm    
+                case ci::app::KeyEvent::KEY_PERIOD:
+                    if(app_setting_ == kInAlgorithmProcess) {
+                        bool finished_running = path_finder_.RunSingleStepDijkstra();
+                        if(finished_running) {
+                            path_finder_.ColorShortestPath();
+                        }
+                    }
+                    break;
+
+                //show one step of shortest path algorithm    
+                case ci::app::KeyEvent::KEY_w:
+                    if(app_setting_ == kInAlgorithmProcess) {
+                        path_finder_.RunEntireAlgorithm();
+                        path_finder_.ColorShortestPath();
+                    }
+                    break;
+                
+                //end shortest path algorithm running    
+                case ci::app::KeyEvent::KEY_ESCAPE:
+                    if(app_setting_ == kInAlgorithmProcess) {
+                        graph_visualizer_.ResetColors(&visualized_graph);
+                        app_setting_ = kMoveMode;
                     }
                     break;
             }
         }
 
         void GraphVisualizerApp::InitializeGraph() {
-            /*
-            Node n1(10, vec2(200, 200));
-            Node n2(20, vec2(750, 200));
-            Node n3(30, vec2(500, 300));
-            Node n4(40, vec2(200, 750));
-            Node n5(50, vec2(750, 750));
-            Node n6(60, vec2(400, 700));
-            Node n7(70, vec2(800, 500));
-
-            visualized_graph.AddNode(n1);
-            visualized_graph.AddNode(n2);
-            visualized_graph.AddNode(n3);
-            visualized_graph.AddNode(n4);
-            visualized_graph.AddNode(n5);
-            visualized_graph.AddNode(n6);
-            visualized_graph.AddNode(n7);
-
-            visualized_graph.AddEdge(n1, n2, false);
-            visualized_graph.AddEdge(n1, n3, false);
-            visualized_graph.AddEdge(n1, n4, false);
-            visualized_graph.AddEdge(n1, n6, false);
-            visualized_graph.AddEdge(n2, n3, false);
-            visualized_graph.AddEdge(n2, n5, false);
-            visualized_graph.AddEdge(n2, n7, false);
-            visualized_graph.AddEdge(n2, n6, false);
-            visualized_graph.AddEdge(n3, n4, false);
-            visualized_graph.AddEdge(n3, n5, false);
-            visualized_graph.AddEdge(n6, n7, false);
-             */
-
-            Node test_node1(10, vec2(600,600));
-            Node test_node2(20, vec2(200,200));
-            Node test_node3(30, vec2(300, 300));
-            Node test_node4(40, vec2(400, 400));
-            Node test_node5(50, vec2(500, 500));
+            Node test_node1(10, vec2(200,200));
+            Node test_node2(20, vec2(400,200));
+            Node test_node3(30, vec2(600, 300));
+            Node test_node4(40, vec2(200, 400));
+            Node test_node5(50, vec2(400, 400));
 
             visualized_graph.AddNode(test_node1);
             visualized_graph.AddNode(test_node2);
@@ -123,29 +143,44 @@ namespace graph {
             visualized_graph.AddNode(test_node4);
             visualized_graph.AddNode(test_node5);
 
-            visualized_graph.AddEdge(test_node1, test_node2, false);
-            visualized_graph.AddEdge(test_node1, test_node4, false);
-            visualized_graph.AddEdge(test_node2, test_node4, false);
-            visualized_graph.AddEdge(test_node5, test_node2, false);
-            visualized_graph.AddEdge(test_node5, test_node3, false);
-            visualized_graph.AddEdge(test_node5, test_node4, false);
-            visualized_graph.AddEdge(test_node2, test_node3, false);
+            visualized_graph.AddEdge(test_node1, test_node2, ci::Color("blue"), 6, false);
+            visualized_graph.AddEdge(test_node1, test_node4, ci::Color("blue"), 1, false);
+            visualized_graph.AddEdge(test_node2, test_node3, ci::Color("blue"), 5, false);
+            visualized_graph.AddEdge(test_node2, test_node4, ci::Color("blue"), 2, false);
+            visualized_graph.AddEdge(test_node2, test_node5, ci::Color("blue"), 2, false);
+            visualized_graph.AddEdge(test_node5, test_node3, ci::Color("blue"), 5, false);
+            visualized_graph.AddEdge(test_node5, test_node4, ci::Color("blue"), 1, false);
         }
 
         void GraphVisualizerApp::WriteCommandInstructions() const {
-            std::string instructions;
-            instructions += "M: " + kMoveMode + "\n";
-            instructions += "N: " + kAddNodeMode + "\n";
-            instructions += "D: " + kDeleteNodeMode;
-            ci::gl::drawStringCentered(instructions, vec2(400, 900), kFontColor,
-                                       kDefaultFont);
+            if(app_setting_ == kShortestPath) {
+                std::string instructions;
+                instructions += "Press Enter When Two Nodes Selected";
+                ci::gl::drawStringCentered(instructions, vec2(500, 900), kFontColor,
+                                           kDefaultFont);
+                
+            } else if(app_setting_ != kInAlgorithmProcess) {
+                std::string instructions;
+                instructions += "M: " + kMoveMode + "\n";
+                instructions += "N: " + kAddNodeMode + "\n";
+                instructions += "D: " + kDeleteNodeMode;
+                ci::gl::drawStringCentered(instructions, vec2(400, 900), kFontColor,
+                                           kDefaultFont);
 
-            std::string add_instructions;
-            add_instructions += "E: " + kAddEdgeMode+ "\n";
-            add_instructions += "R: " + kDeleteEdgeMode + "\n";
-            add_instructions += "S: " + kShortestPath;
-            ci::gl::drawStringCentered(add_instructions, vec2(600, 900), kFontColor,
-                                       kDefaultFont);
+                std::string add_instructions;
+                add_instructions += "E: " + kAddEdgeMode+ "\n";
+                add_instructions += "R: " + kDeleteEdgeMode + "\n";
+                add_instructions += "S: " + kShortestPath;
+                ci::gl::drawStringCentered(add_instructions, vec2(600, 900), kFontColor,
+                                           kDefaultFont);
+            } else {
+                std::string instructions;
+                instructions += ">: " + kInAlgorithmProcess + "\n";
+                instructions += "W: " + kRunWholeAlgorithm + "\n";
+                instructions += "Esc: " + kStopAlgorithmRunning;
+                ci::gl::drawStringCentered(instructions, vec2(400, 900), kFontColor,
+                                           kDefaultFont);
+            }
         }
 
         void GraphVisualizerApp::DisplayCurrentCommand() const {
@@ -158,7 +193,7 @@ namespace graph {
         }
 
         void GraphVisualizerApp::DisplayEdgeEditing() const {
-            if (app_setting_ != kAddEdgeMode && app_setting_ != kDeleteEdgeMode) {
+            if (app_setting_ != kAddEdgeMode && app_setting_ != kDeleteEdgeMode && app_setting_ != kShortestPath) {
                 return;
             }
 
@@ -168,6 +203,15 @@ namespace graph {
                                        kDefaultFont);
             ci::gl::drawStringCentered(graph_editor_.GetVectorValues(), vec2(kWindowSize - 135, 40), ci::Color("red"),
                                        kDefaultFont);
+        }
+
+        void GraphVisualizerApp::ResetColors() {
+            for(auto& node: visualized_graph.GetNodes()) {
+                visualized_graph.SetNodeColor(node, ci::Color("orange"));
+                for(auto& target_edge: visualized_graph.GetAdjacentNodes(node)) {
+                    visualized_graph.SetEdgeColor(node, *target_edge.GetEndNode(), ci::Color("blue"));
+                }
+            }
         }
     }
 }

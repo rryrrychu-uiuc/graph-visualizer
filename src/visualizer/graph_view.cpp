@@ -56,6 +56,7 @@ void GraphView::DrawEdges(Graph visualized_graph) {
             ci::gl::color(adjacent_edge.GetEdgeColor());
             ci::gl::lineWidth(5);
             ci::gl::drawLine(current_node.GetLocation(), adjacent_edge.GetEndNode()->GetLocation());
+            DrawEdgeLabel(adjacent_edge);
         }
     }
 }
@@ -68,8 +69,28 @@ void GraphView::DrawLabel(const Node &target_node) {
                        ci::Font("Times New Roman", 40));
 }
 
+void GraphView::DrawEdgeLabel(Edge target_edge) {
+    vec2 start_loc = target_edge.GetStartNode()->GetLocation();
+    vec2 end_loc = target_edge.GetEndNode()->GetLocation();
+    
+    float x_location = (start_loc[0] + end_loc[0])/2;
+    float y_location = (start_loc[1] + end_loc[1])/2;
+    vec2 location(x_location, y_location);
+    ci::gl::drawString(std::to_string(target_edge.GetWeight()), location, ci::Color("white"),
+                       ci::Font("Times New Roman", 40));
+}
+
 bool GraphView::IsOutOfBounds(vec2 location) const {
     float x = location[0];
     float y = location[1];
     return x >= kWindowSize - kMargin || y >= kWindowSize - kMargin || x <= kMargin || y <= kMargin;
+}
+
+void GraphView::ResetColors(Graph *target_graph) {
+    for(auto& node: target_graph->GetNodes()) {
+        target_graph->SetNodeColor(node, ci::Color("orange"));
+        for(auto& target_edge: target_graph->GetAdjacentNodes(node)) {
+            target_graph->SetEdgeColor(node, *target_edge.GetEndNode(), ci::Color("blue"));
+        }
+    }
 }

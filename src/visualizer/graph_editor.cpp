@@ -77,6 +77,28 @@ void GraphEditor::DeleteEdge(Graph *target_graph, vec2 location) {
     }
 }
 
+void GraphEditor::MarkNode(Graph *target_graph, vec2 location) {
+    if(nodes_to_bridge.size() >= 2) {
+        return;
+    }
+    
+    Node target_node = GetNodeAtLocation(target_graph, location);
+    if (!NodeExistsInGraph(target_node)) {
+        return;
+    }
+
+    //checks to make sure node is not find path to itself
+    if (!nodes_to_bridge.empty() && target_node == nodes_to_bridge[0]) {
+        return;
+    }
+
+    if (nodes_to_bridge.size() < 2) {
+        nodes_to_bridge.push_back(target_node);
+        target_graph->SetNodeColor(target_node, ci::Color(50, 205, 50));
+    }
+}
+
+
 Node GraphEditor::GetNodeAtLocation(Graph *target_graph, vec2 location) const {
     Node target_node;
     for (auto &to_check: target_graph->GetNodes()) {
@@ -97,11 +119,17 @@ bool GraphEditor::IsOutOfBounds(vec2 location) const {
     return x >= kWindowSize - kMargin || y >= kWindowSize - kMargin || x <= kMargin || y <= kMargin;
 }
 
+vector<Node> GraphEditor::GetNodes() {
+    return nodes_to_bridge;
+}
+
 std::string GraphEditor::GetVectorValues() const {
     if(nodes_to_bridge.empty()) {
         return "{}";
-    } else {
+    } else if(nodes_to_bridge.size() == 1){
         return "{" + std::to_string(nodes_to_bridge[0].GetValue()) + "}";
+    } else {
+        return "{" + std::to_string(nodes_to_bridge[0].GetValue()) + ", " + std::to_string(nodes_to_bridge[1].GetValue()) + "}";
     }
 }
 
@@ -112,3 +140,9 @@ bool GraphEditor::empty() {
 void GraphEditor::clear() {
     nodes_to_bridge.clear();
 }
+
+size_t GraphEditor::size() {
+    return nodes_to_bridge.size();
+}
+
+

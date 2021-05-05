@@ -8,6 +8,7 @@
 #include "cinder/gl/gl.h"
 #include "graph_view.h"
 #include "graph_editor.h"
+#include "shortest_path_algorithms.h"
 
 namespace graph {
 
@@ -39,12 +40,16 @@ namespace graph {
             const std::string kAddEdgeMode = "Add Edge";
             const std::string kDeleteNodeMode = "Delete Node";
             const std::string kDeleteEdgeMode = "Delete Edge";
-            const std::string kShortestPath = "Find Shortest Path";
+            const std::string kShortestPath = "Choose Nodes";
+            const std::string kInAlgorithmProcess = "Increment Algorithm";
+            const std::string kRunWholeAlgorithm = "Run Entire Algorithm";
+            const std::string kStopAlgorithmRunning = "Stop Running Algorithm";
             
             std::string app_setting_;
 
             GraphView graph_visualizer_;
             GraphEditor graph_editor_;
+            ShortestPath path_finder_;
             Graph visualized_graph;
 
             void InitializeGraph();
@@ -54,6 +59,8 @@ namespace graph {
             void DisplayCurrentCommand() const;
             
             void DisplayEdgeEditing() const;
+            
+            void ResetColors();
         };
     }
 }
