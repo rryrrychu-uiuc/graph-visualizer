@@ -67,10 +67,21 @@ namespace graph {
                     app_setting_ = kDeleteEdgeMode;
                     graph_editor_.clear();
                     break;
+
+                case ci::app::KeyEvent::KEY_s:
+                    app_setting_ = kShortestPath;
+                    break;
+                    
+                case ci::app::KeyEvent::KEY_KP_ENTER:
+                    if(app_setting_ == kShortestPath) {
+                        
+                    }
+                    break;
             }
         }
 
         void GraphVisualizerApp::InitializeGraph() {
+            /*
             Node n1(10, vec2(200, 200));
             Node n2(20, vec2(750, 200));
             Node n3(30, vec2(500, 300));
@@ -98,6 +109,27 @@ namespace graph {
             visualized_graph.AddEdge(n3, n4, false);
             visualized_graph.AddEdge(n3, n5, false);
             visualized_graph.AddEdge(n6, n7, false);
+             */
+
+            Node test_node1(10, vec2(600,600));
+            Node test_node2(20, vec2(200,200));
+            Node test_node3(30, vec2(300, 300));
+            Node test_node4(40, vec2(400, 400));
+            Node test_node5(50, vec2(500, 500));
+
+            visualized_graph.AddNode(test_node1);
+            visualized_graph.AddNode(test_node2);
+            visualized_graph.AddNode(test_node3);
+            visualized_graph.AddNode(test_node4);
+            visualized_graph.AddNode(test_node5);
+
+            visualized_graph.AddEdge(test_node1, test_node2, false);
+            visualized_graph.AddEdge(test_node1, test_node4, false);
+            visualized_graph.AddEdge(test_node2, test_node4, false);
+            visualized_graph.AddEdge(test_node5, test_node2, false);
+            visualized_graph.AddEdge(test_node5, test_node3, false);
+            visualized_graph.AddEdge(test_node5, test_node4, false);
+            visualized_graph.AddEdge(test_node2, test_node3, false);
         }
 
         void GraphVisualizerApp::WriteCommandInstructions() const {
@@ -110,7 +142,8 @@ namespace graph {
 
             std::string add_instructions;
             add_instructions += "E: " + kAddEdgeMode+ "\n";
-            add_instructions += "R: " + kDeleteEdgeMode;
+            add_instructions += "R: " + kDeleteEdgeMode + "\n";
+            add_instructions += "S: " + kShortestPath;
             ci::gl::drawStringCentered(add_instructions, vec2(600, 900), kFontColor,
                                        kDefaultFont);
         }

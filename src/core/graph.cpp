@@ -32,6 +32,10 @@ namespace graph {
     }
     
     void Graph::AddEdge(Node start_node, Node end_node, ci::Color new_color, bool single_direction) {
+        AddEdge(start_node, end_node, new_color, -1, single_direction);
+    }
+
+    void Graph::AddEdge(Node start_node, Node end_node, ci::Color new_color, int weight, bool single_direction) {
         if (graph_mappings_.empty() || &start_node == &end_node) {
             return;
         }
@@ -48,10 +52,10 @@ namespace graph {
             }
         }
 
-        graph_mappings_[*start_node_loc].emplace_back(Edge(start_node_loc, end_node_loc, true, new_color));
+        graph_mappings_[*start_node_loc].emplace_back(Edge(start_node_loc, end_node_loc, true, new_color, weight));
 
         if (!single_direction) {
-            graph_mappings_[*end_node_loc].emplace_back(Edge(end_node_loc, start_node_loc, true, new_color));
+            graph_mappings_[*end_node_loc].emplace_back(Edge(end_node_loc, start_node_loc, true, new_color, weight));
         }
     }
     
@@ -207,5 +211,4 @@ namespace graph {
         graph_mappings_.clear();
         map_size = 0;
     }
-    
 }

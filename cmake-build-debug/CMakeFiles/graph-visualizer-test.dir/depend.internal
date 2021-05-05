@@ -10323,7 +10323,7 @@ CMakeFiles/graph-visualizer-test.dir/tests/shortest_path_test.cpp.obj
  ../include/core/edge.h
  ../include/core/graph.h
  ../include/core/node.h
- ../include/visualizer/graph_view.h
+ ../include/visualizer/shortest_path_algorithms.h
  C:/Users/rryrr/CLionProjects/Cinder/include/boost/assert.hpp
  C:/Users/rryrr/CLionProjects/Cinder/include/boost/cerrno.hpp
  C:/Users/rryrr/CLionProjects/Cinder/include/boost/checked_delete.hpp
@@ -10868,7 +10868,6 @@ CMakeFiles/graph-visualizer-test.dir/tests/shortest_path_test.cpp.obj
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/CurrentFunction.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/DataSource.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/DataTarget.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Display.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Exception.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Export.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Filesystem.h
@@ -10893,34 +10892,10 @@ CMakeFiles/graph-visualizer-test.dir/tests/shortest_path_test.cpp.obj
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Stream.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Surface.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Text.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Thread.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Timer.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/TriMesh.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Url.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/Vector.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/android/AndroidDevLog.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/App.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/AppBase.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/Event.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/FileDropEvent.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/KeyEvent.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/MouseEvent.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/Platform.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/Renderer.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/RendererGl.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/TouchEvent.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/Window.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/android/AppAndroid.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/android/AssetFileSystem.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/android/EventManagerAndroid.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/android/android_native_app_glue.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/cocoa/AppCocoaTouch.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/cocoa/AppMac.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/linux/AppLinux.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/msw/AppMsw.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/app/winrt/AppWinRt.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/cocoa/CinderCocoa.h
- C:/Users/rryrr/CLionProjects/Cinder/include/cinder/cocoa/CinderCocoaTouch.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/gl/Batch.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/gl/BufferObj.h
  C:/Users/rryrr/CLionProjects/Cinder/include/cinder/gl/BufferTexture.h

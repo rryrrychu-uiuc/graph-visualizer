@@ -48,6 +48,16 @@ namespace graph {
          * @param single_direction false if both nodes should be added to each other's adjacency list
          */        
         void AddEdge(Node start_node, Node end_node, ci::Color new_color, bool single_direction);
+
+        /**
+        * Add adjacent node to a certain node
+        * @param start_node node to add adjacent node to 
+        * @param end_node node to be added
+        * @param new_color the color of the edge
+        * @param single_direction false if both nodes should be added to each other's adjacency list
+        * @param weight the value on the edge
+        */
+        void AddEdge(Node start_node, Node end_node, ci::Color new_color, int weight, bool single_direction);
         
         /**
          * Delete a node an all existences of edges from graph (including adjacencies)

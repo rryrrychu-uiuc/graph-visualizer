@@ -12,13 +12,42 @@ public:
     
     bool RunSingleStepDijkstra();
     
+    void RunEntireAlgorithm();
+    
+    Node GetSmallestEdge();
+    
+    bool IsVisited(Node target_node);
+    
+    int IndexOfNode(Node target_node);
+    
+    void MoveNodeToVisited(Node target_node);
+    
+    vector<Node> GetUnvisitedNodes();
+    
+    vector<Node> GetVisitedNodes();
+    
+    vector<Node> GetPreviousNodes();
+    
+    vector<int> GetDistances();
+    
+    Node GetStartingNode();
+    
 private:
     Graph* target_graph_;
     Node starting_node_;
     Node ending_node_;
     
-    vector<Node> visited_nodes;
-    vector<Node> unvisited_nodes;
+    vector<Node> visited_nodes_;
+    vector<Node> unvisited_nodes_;
+    
+    vector<int> distances_;
+    vector<Node> previous_node_;
+    
+    int starting_index_;
+    int ending_index_;
+    
+    void ChangeDistances(Edge target_edge);
+    void ResetColor();
 };
 
 

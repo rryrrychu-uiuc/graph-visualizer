@@ -39,6 +39,7 @@ namespace graph {
             const std::string kAddEdgeMode = "Add Edge";
             const std::string kDeleteNodeMode = "Delete Node";
             const std::string kDeleteEdgeMode = "Delete Edge";
+            const std::string kShortestPath = "Find Shortest Path";
             
             std::string app_setting_;
 

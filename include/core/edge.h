@@ -21,16 +21,21 @@ public:
     * Create an edge given two node references and the directions, and color
     */
     Edge(const Node* start_node, const Node* end_node, bool is_two_sided, ci::Color target_color);
+
+    /**
+    * Create an edge given two node references and the directions, color, and weight
+    */
+    Edge(const Node* start_node, const Node* end_node, bool is_two_sided, ci::Color target_color, int weight);
     
     bool IsTwoSided() const;
     
-    const Node* GetStartNode();
+    const Node* GetStartNode() const;
     
-    const Node* GetEndNode();
+    const Node* GetEndNode() const;
     
-    int GetWeight();
+    int GetWeight() const;
     
-    ci::Color GetEdgeColor();
+    ci::Color GetEdgeColor() const;
     
     /**
      * Change the first node in the edge
@@ -61,6 +66,11 @@ public:
     * Change edge to be two sided
     */
     void ChangeToTwoSided();
+
+    /**
+    * Less than operator
+    */
+    bool operator<(const Edge &ob) const;
     
 private:
     bool is_two_sided_;
